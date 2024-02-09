@@ -3,10 +3,15 @@
 
 import UIKit
 
-///  Class controller
-class ViewController: UIViewController {
+/// Класс ViewController - контроллер экрана, отображающий пользовательский интерфейс и обрабатывающий действия
+/// пользователя при нажатии на кнопку.
+final class ViewController: UIViewController {
+    // MARK: - Constants
+
     let mainView = FierstScreen()
     let model = Reverse()
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,8 @@ class ViewController: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
+
+    // MARK: - Private Methods
 
     @objc private func addWordAlert() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
