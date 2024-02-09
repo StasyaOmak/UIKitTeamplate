@@ -7,10 +7,10 @@ import UIKit
 final class RegistrationViewController: UIViewController {
     // MARK: - IBOutlets
 
-    @IBOutlet var loginTextField: UITextField?
-    @IBOutlet var passwordTextField: UITextField?
-    @IBAction func sendPressedButton(sender: UIButton) {}
-    @IBOutlet var sendisEnabledButton: UIButton?
+    @IBOutlet private var loginTextField: UITextField?
+    @IBOutlet private var passwordTextField: UITextField?
+    @IBAction private func sendPressedButton(sender: UIButton) {}
+    @IBOutlet private var sendisEnabledButton: UIButton?
 
     // MARK: - Life Cycle
 
