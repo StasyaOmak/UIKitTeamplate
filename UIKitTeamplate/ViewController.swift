@@ -3,10 +3,14 @@
 
 import UIKit
 
-///  Class controller
-class ViewController: UIViewController {
+/// Класс Вью Контроллер угадай число и калькулятор
+final class ViewController: UIViewController {
+    // MARK: - Constants
+
     let newView = UIView()
     let frame = UIScreen.main.bounds
+
+    // MARK: - Private Properties
 
     private lazy var nameLabel: UILabel = {
         let element = UILabel()
@@ -60,6 +64,8 @@ class ViewController: UIViewController {
         return element
     }()
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -81,7 +87,9 @@ class ViewController: UIViewController {
         view.addSubview(calculatorButton)
     }
 
-    @objc func addCalculateNumbersAlert() {
+    // MARK: - Private Methods
+
+    @objc private func addCalculateNumbersAlert() {
         let calculateAlert = UIAlertController(title: "Введите ваши числа", message: nil, preferredStyle: .alert)
 
         calculateAlert.addTextField { textField in
