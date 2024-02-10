@@ -1,7 +1,7 @@
 // Reverse.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
+import UIKit
 
 /// Метод для вывода слов в обртаном порядке
 struct Reverse {

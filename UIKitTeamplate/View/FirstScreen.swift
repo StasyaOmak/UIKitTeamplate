@@ -5,7 +5,7 @@ import UIKit
 
 /// Класс FierstScreen представляет пользовательский экран с различными элементами интерфейса, такими как кнопка,
 /// надписи и метки.
-class FierstScreen: UIView {
+final class FierstScreen: UIView {
     lazy var startButton: UIButton = {
         let element = UIButton(type: .system)
         element.titleLabel?.font = .systemFont(ofSize: 25)
