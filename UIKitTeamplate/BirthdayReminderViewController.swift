@@ -1,10 +1,10 @@
-// ViewController.swift
+// BirthdayReminderViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-///  Class controller
-class ViewController: UIViewController {
+/// jjj
+class BirthdayReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
