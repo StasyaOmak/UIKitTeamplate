@@ -68,7 +68,6 @@ final class RegistrationScreenViewController: UIViewController {
         let element = UILabel()
         element.text = "Use FaceID"
         element.textColor = .black
-//        element.isHidden = true
         element.font = .systemFont(ofSize: 16, weight: .bold)
         element.frame = CGRect(x: 86, y: 544, width: 150, height: 35)
         return element
@@ -87,7 +86,6 @@ final class RegistrationScreenViewController: UIViewController {
 
     var switchItem: UISwitch = {
         let element = UISwitch()
-//        element.isOn = true
         element.frame = CGRect(x: 248, y: 544, width: 0, height: 0)
         return element
     }()
@@ -148,15 +146,14 @@ final class RegistrationScreenViewController: UIViewController {
         if userNameText.isEmpty || passwordText.isEmpty {
             loginButton.isEnabled = false
             loginButton.alpha = 0.5
-//            switchItem.isOn = false
             switchItem.isHidden = true
-//            faceIdTextLabel.isHidden = true
+            faceIdTextLabel.isHidden = true
         } else {
             loginButton.isEnabled = true
             loginButton.alpha = 1
             switchItem.isOn = true
             switchItem.isHidden = false
-            faceIdTextLabel.isHidden = true
+            faceIdTextLabel.isHidden = false
         }
     }
 
