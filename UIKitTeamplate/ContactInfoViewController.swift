@@ -331,8 +331,7 @@ extension ContactInfoViewController {
         dismiss(animated: true)
     }
 
-    @objc private func addButtonTapped() {
-    }
+    @objc private func addButtonTapped() {}
 
     @objc private func datePickerValueChanged() {
         let dateFormatter = DateFormatter()

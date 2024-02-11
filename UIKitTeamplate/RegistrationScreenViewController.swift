@@ -5,6 +5,8 @@ import UIKit
 
 /// Класс отвечает за регистрацию пользователя при входе в приложение
 final class RegistrationScreenViewController: UIViewController {
+    // MARK: - Lazy Properties
+
     private lazy var calendarImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 125, y: 70, width: 125, height: 125)
@@ -12,7 +14,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var birthdayReminderLabel: UILabel = {
+    private lazy var birthdayReminderLabel: UILabel = {
         let element = UILabel()
         element.text = "Birthday\nReminder"
         element.numberOfLines = 2
@@ -23,7 +25,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var signInLabel: UILabel = {
+    private lazy var signInLabel: UILabel = {
         let element = UILabel()
         element.text = "Sign in"
         element.textColor = UIColor(named: "mainColor")
@@ -32,7 +34,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var emailLabel: UILabel = {
+    private lazy var emailLabel: UILabel = {
         let element = UILabel()
         element.text = "Email"
         element.textColor = UIColor(named: "mainColor")
@@ -41,7 +43,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var passwordLabel: UILabel = {
+    private lazy var passwordLabel: UILabel = {
         let element = UILabel()
         element.text = "Password"
         element.textColor = UIColor(named: "mainColor")
@@ -50,21 +52,21 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var passwordGreyLine: UIView = {
+    private lazy var passwordGreyLine: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 20, y: 448, width: 335, height: 1)
         element.backgroundColor = .gray
         return element
     }()
 
-    var emailGreyLine: UIView = {
+    private lazy var emailGreyLine: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 20, y: 372, width: 335, height: 1)
         element.backgroundColor = .gray
         return element
     }()
 
-    var faceIdTextLabel: UILabel = {
+    private lazy var faceIdTextLabel: UILabel = {
         let element = UILabel()
         element.text = "Use FaceID"
         element.textColor = .black
@@ -73,7 +75,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    lazy var loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let element = UIButton(type: .system)
         element.titleLabel?.font = .systemFont(ofSize: 25)
         element.tintColor = .white
@@ -84,20 +86,20 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var switchItem: UISwitch = {
+    private lazy var switchItem: UISwitch = {
         let element = UISwitch()
         element.frame = CGRect(x: 248, y: 544, width: 0, height: 0)
         return element
     }()
 
-    var emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Typing email"
         element.frame = CGRect(x: 20, y: 347, width: 175, height: 17)
         return element
     }()
 
-    var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Typing password"
         element.isSecureTextEntry = true
@@ -105,7 +107,7 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
-    var hidenEyeButton: UIButton = {
+    private lazy var hidenEyeButton: UIButton = {
         let element = UIButton(type: .system)
         element.setImage(UIImage(systemName: "hiddenEye"), for: .normal)
         element.tintColor = .gray
@@ -113,11 +115,15 @@ final class RegistrationScreenViewController: UIViewController {
         return element
     }()
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         checkTextInput()
     }
+
+    // MARK: - Private Methods
 
     private func setupViews() {
         view.addSubview(calendarImageView)

@@ -5,6 +5,8 @@ import UIKit
 
 /// Класс реализовывает отображение списка  именинников
 final class BirthdayReminderViewController: UIViewController {
+    // MARK: - Lazy Properties
+
     private lazy var helenaImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 19, y: 105, width: 75, height: 75)
@@ -40,7 +42,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var helenaNameLabel: UILabel = {
+    private lazy var helenaNameLabel: UILabel = {
         let element = UILabel()
         element.text = "Helena Link"
         element.textColor = .black
@@ -49,7 +51,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var helenaBirthdayLabel: UILabel = {
+    private lazy var helenaBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "10.03 - turns 25!"
         element.textColor = .black
@@ -58,7 +60,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var veronaNameLabel: UILabel = {
+    private lazy var veronaNameLabel: UILabel = {
         let element = UILabel()
         element.text = "Verona Tusk"
         element.textColor = .black
@@ -67,7 +69,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var veronaBirthdayLabel: UILabel = {
+    private lazy var veronaBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "20.03 - turns 39"
         element.textColor = .black
@@ -76,7 +78,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var alexNameLabel: UILabel = {
+    private lazy var alexNameLabel: UILabel = {
         let element = UILabel()
         element.text = "Alex Smith"
         element.textColor = .black
@@ -85,7 +87,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var alexBirthdayLabel: UILabel = {
+    private lazy var alexBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "21.04 - turns 51"
         element.textColor = .black
@@ -94,7 +96,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var tomNameLabel: UILabel = {
+    private lazy var tomNameLabel: UILabel = {
         let element = UILabel()
         element.text = "Tom Johnson"
         element.textColor = .black
@@ -103,7 +105,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var tomBirthdayLabel: UILabel = {
+    private lazy var tomBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "05.06 - turns 18"
         element.textColor = .black
@@ -112,7 +114,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var veronaDaysBeforeBirthdayLabel: UILabel = {
+    private lazy var veronaDaysBeforeBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "10\ndays"
         element.numberOfLines = 2
@@ -122,7 +124,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var alexDaysBeforeBirthdayLabel: UILabel = {
+    private lazy var alexDaysBeforeBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "42\ndays"
         element.numberOfLines = 2
@@ -132,7 +134,7 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
-    var tomDaysBeforeBirthdayLabel: UILabel = {
+    private lazy var tomDaysBeforeBirthdayLabel: UILabel = {
         let element = UILabel()
         element.text = "42\ndays"
         element.numberOfLines = 2
@@ -142,11 +144,15 @@ final class BirthdayReminderViewController: UIViewController {
         return element
     }()
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSetup()
         setupViews()
     }
+
+    // MARK: - Private Methods
 
     private func setupViews() {
         view.addSubview(helenaImageView)
@@ -189,7 +195,7 @@ final class BirthdayReminderViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let contactInfoViewController = ContactInfoViewController()
         contactInfoViewController.modalPresentationStyle = .popover
         present(contactInfoViewController, animated: true)
