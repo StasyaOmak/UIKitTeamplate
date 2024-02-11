@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс Вью Контроллер угадай число и калькулятор
-final class ViewController: UIViewController {
+final class guessNumberViewController: UIViewController {
     // MARK: - Constants
 
     let newView = UIView()
@@ -69,9 +69,6 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
-        newView.frame = frame
-        newView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +82,9 @@ final class ViewController: UIViewController {
         view.addSubview(nameLabel)
         view.addSubview(guessingButton)
         view.addSubview(calculatorButton)
+        
+        newView.frame = frame
+        newView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 
     // MARK: - Private Methods
