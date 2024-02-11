@@ -5,10 +5,10 @@ import UIKit
 
 /// Класс ViewController - контроллер экрана, отображающий пользовательский интерфейс и обрабатывающий действия
 /// пользователя при нажатии на кнопку.
-final class ViewController: UIViewController {
+final class WordReverterViewController: UIViewController {
     // MARK: - Constants
 
-    let mainView = FierstScreen()
+    let mainView = FirstScreen()
     let model = Reverse()
 
     // MARK: - Life Cycle
