@@ -7,7 +7,8 @@ import UIKit
 
 final class ReservationViewController: UIViewController {
     // MARK: - Private Methods
-
+    // MARK: - IBAction
+    
     @IBAction private func takeBill(_ sender: Any) {
         let alertController = UIAlertController(
             title: "Выставить счет?",

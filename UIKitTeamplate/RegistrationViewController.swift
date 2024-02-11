@@ -9,8 +9,11 @@ final class RegistrationViewController: UIViewController {
 
     @IBOutlet private var loginTextField: UITextField?
     @IBOutlet private var passwordTextField: UITextField?
-    @IBAction private func sendPressedButton(sender: UIButton) {}
     @IBOutlet private var sendisEnabledButton: UIButton?
+    
+    // MARK: - IBAction
+    @IBAction private func sendPressedButton(sender: UIButton) {}
+
 
     // MARK: - Life Cycle
 
