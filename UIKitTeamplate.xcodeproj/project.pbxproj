@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F073AD32B79EFDB0082979C /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AD22B79EFDB0082979C /* MusicPlayer.swift */; };
+		6F073AD52B79F0360082979C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AD42B79F0360082979C /* PlayerViewController.swift */; };
+		6F073AD72B79F0CF0082979C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AD62B79F0CF0082979C /* Album.swift */; };
+		6F073ADB2B79F1FF0082979C /* aigel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F073AD82B79F1FE0082979C /* aigel.mp3 */; };
+		6F073ADD2B79F1FF0082979C /* stromae.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F073ADA2B79F1FF0082979C /* stromae.mp3 */; };
+		6F073ADF2B79F22F0082979C /* lorean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F073ADE2B79F22F0082979C /* lorean.mp3 */; };
 		6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A4C2B7129E0002D3883 /* AppDelegate.swift */; };
 		6F945A4F2B7129E0002D3883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */; };
-		6F945A512B7129E0002D3883 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A502B7129E0002D3883 /* ViewController.swift */; };
 		6F945A542B7129E0002D3883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A522B7129E0002D3883 /* Main.storyboard */; };
 		6F945A562B7129E1002D3883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A552B7129E1002D3883 /* Assets.xcassets */; };
 		6F945A592B7129E1002D3883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A572B7129E1002D3883 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F073AD22B79EFDB0082979C /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		6F073AD42B79F0360082979C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		6F073AD62B79F0CF0082979C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		6F073AD82B79F1FE0082979C /* aigel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aigel.mp3; sourceTree = "<group>"; };
+		6F073ADA2B79F1FF0082979C /* stromae.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stromae.mp3; sourceTree = "<group>"; };
+		6F073ADE2B79F22F0082979C /* lorean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lorean.mp3; sourceTree = "<group>"; };
 		6F945A492B7129E0002D3883 /* UIKitTeamplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitTeamplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F945A4C2B7129E0002D3883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6F945A502B7129E0002D3883 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F945A532B7129E0002D3883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F945A552B7129E1002D3883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F945A582B7129E1002D3883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,11 +68,16 @@
 			children = (
 				6F945A4C2B7129E0002D3883 /* AppDelegate.swift */,
 				6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */,
-				6F945A502B7129E0002D3883 /* ViewController.swift */,
+				6F073AD42B79F0360082979C /* PlayerViewController.swift */,
+				6F073AD62B79F0CF0082979C /* Album.swift */,
+				6F073AD22B79EFDB0082979C /* MusicPlayer.swift */,
 				6F945A522B7129E0002D3883 /* Main.storyboard */,
 				6F945A552B7129E1002D3883 /* Assets.xcassets */,
 				6F945A572B7129E1002D3883 /* LaunchScreen.storyboard */,
 				6F945A5A2B7129E1002D3883 /* Info.plist */,
+				6F073AD82B79F1FE0082979C /* aigel.mp3 */,
+				6F073ADA2B79F1FF0082979C /* stromae.mp3 */,
+				6F073ADE2B79F22F0082979C /* lorean.mp3 */,
 			);
 			path = UIKitTeamplate;
 			sourceTree = "<group>";
@@ -132,8 +147,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F945A592B7129E1002D3883 /* LaunchScreen.storyboard in Resources */,
+				6F073ADD2B79F1FF0082979C /* stromae.mp3 in Resources */,
+				6F073ADF2B79F22F0082979C /* lorean.mp3 in Resources */,
 				6F945A562B7129E1002D3883 /* Assets.xcassets in Resources */,
 				6F945A542B7129E0002D3883 /* Main.storyboard in Resources */,
+				6F073ADB2B79F1FF0082979C /* aigel.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +204,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F945A512B7129E0002D3883 /* ViewController.swift in Sources */,
 				6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */,
+				6F073AD32B79EFDB0082979C /* MusicPlayer.swift in Sources */,
 				6F945A4F2B7129E0002D3883 /* SceneDelegate.swift in Sources */,
+				6F073AD52B79F0360082979C /* PlayerViewController.swift in Sources */,
+				6F073AD72B79F0CF0082979C /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
