@@ -1,10 +1,9 @@
-// ViewController.swift
+// LoginViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-///  Class controller
-class ViewController: UIViewController {
+final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
