@@ -45,7 +45,7 @@ final class PlayerViewController: UIViewController {
         super.viewDidLoad()
         initializeAudioPlayer()
         setupPlayer()
-        timeSongLabel.text = "00: 00"
+        timeSongLabel.text = "00:00"
         nameSongLabel.textColor = .white
         singerLabel.textColor = .white
     }
@@ -54,11 +54,12 @@ final class PlayerViewController: UIViewController {
 
     // перемотка музыки
     private func setupPlayer() {
-        singerLabel.text = musicAlbum[index].nameArtist
-        nameSongLabel.text = musicAlbum[index].nameSong
-        nameImageView.image = UIImage(named: musicAlbum[index].image)
+        let currentAlbum = musicAlbum[index]
+        singerLabel.text = currentAlbum.nameArtist
+        nameSongLabel.text = currentAlbum.nameSong
+        nameImageView.image = UIImage(named: currentAlbum.image)
         favoriteButton.addTarget(self, action: #selector(changeSlider), for: .valueChanged)
-        slider.transform = CGAffineTransformMakeRotation(CGFloat(-Double.pi / 2))
+        slider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
     }
 
     private func initializeAudioPlayer() {
@@ -68,7 +69,7 @@ final class PlayerViewController: UIViewController {
                 favoriteButton.maximumValue = Float(player.duration)
             }
         } catch {
-            print("Error")
+            print("Error initializing audio player: \(error)")
         }
 
         timer = Timer.scheduledTimer(
@@ -147,7 +148,7 @@ final class PlayerViewController: UIViewController {
             message: "",
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "Ок", style: .cancel)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
 
         playlistAlert.addAction(okAction)
         present(playlistAlert, animated: true)

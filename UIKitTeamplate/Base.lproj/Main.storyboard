@@ -394,13 +394,13 @@
                                 <rect key="frame" x="74" y="721" width="48" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="replay_30" title=""/>
+                                <buttonConfiguration key="configuration" style="plain" image="replay" title=""/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="OLj-4S-Td4">
                                 <rect key="frame" x="283" y="730" width="16" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="forward_30 (1)" title=""/>
+                                <buttonConfiguration key="configuration" style="plain" image="forward" title=""/>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="7Qc-iQ-jbu" userLabel="Slider">
                                 <rect key="frame" x="-80" y="340" width="200" height="30"/>
@@ -481,13 +481,13 @@
     <resources>
         <image name="Aigel" width="1000" height="1000"/>
         <image name="Lorean" width="300" height="300"/>
-        <image name="forward_30 (1)" width="24" height="24"/>
+        <image name="forward" width="24" height="24"/>
         <image name="last" width="24" height="24"/>
         <image name="myPlane" width="21" height="18"/>
         <image name="next" width="24" height="24"/>
         <image name="play" width="55" height="55"/>
         <image name="pleer" width="375" height="761"/>
-        <image name="replay_30" width="24" height="24"/>
+        <image name="replay" width="24" height="24"/>
         <image name="sound" width="16" height="20"/>
         <image name="stromae" width="316" height="316"/>
         <image name="x" width="14" height="14"/>
