@@ -3,8 +3,10 @@
 
 import UIKit
 
-/// Класс отвечает за регистрацию пользователя при входе в приложение
+/// Класс отвечает за авторизацию пользователя при входе в приложение
 final class LoginViewController: UIViewController {
+    
+    // MARK: - Private Properties
     private lazy var whitePartOfScreen: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 0, y: 248, width: 375, height: 564)
@@ -24,7 +26,7 @@ final class LoginViewController: UIViewController {
         let element = UILabel()
         element.text = "Авторизация"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 26, weight: .bold)
+        element.font = UIFont(name: "Verdana-Bold", size: 26)
         element.frame = CGRect(x: 20, y: 32, width: 195, height: 31)
         return element
     }()
@@ -33,7 +35,7 @@ final class LoginViewController: UIViewController {
         let element = UILabel()
         element.text = "Логин"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
+        element.font = UIFont(name: "Verdana-Bold", size: 16)
         element.frame = CGRect(x: 20, y: 84, width: 175, height: 19)
         return element
     }()
@@ -42,7 +44,7 @@ final class LoginViewController: UIViewController {
         let element = UILabel()
         element.text = "Пароль"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
+        element.font = UIFont(name: "Verdana-Bold", size: 16)
         element.frame = CGRect(x: 20, y: 159, width: 175, height: 19)
         return element
     }()
@@ -50,7 +52,6 @@ final class LoginViewController: UIViewController {
     private lazy var hidenEyeButton: UIButton = {
         let element = UIButton()
         element.setImage(UIImage(named: "vector"), for: .normal)
-//        element.tintColor = .gray
         element.frame = CGRect(x: 332, y: 185, width: 22, height: 19)
         element.addTarget(self, action: #selector(hideButtonPressed), for: .touchUpInside)
         return element
@@ -60,6 +61,7 @@ final class LoginViewController: UIViewController {
         let element = UITextField()
         element.placeholder = "Введите пароль"
         element.isSecureTextEntry = true
+        element.font = UIFont(name: "Verdana", size: 14)
         element.frame = CGRect(x: 20, y: 188, width: 129, height: 17)
         return element
     }()
@@ -67,13 +69,14 @@ final class LoginViewController: UIViewController {
     private lazy var emailTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Введите почту"
+        element.font = UIFont(name: "Verdana", size: 14)
         element.frame = CGRect(x: 20, y: 113, width: 175, height: 17)
         return element
     }()
 
     private lazy var loginButton: UIButton = {
         let element = UIButton(type: .system)
-        element.titleLabel?.font = .systemFont(ofSize: 16)
+        element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         element.setTitleColor(.white, for: .normal)
         element.frame = CGRect(x: 20, y: 416, width: 335, height: 44)
         element.setTitle("Войти", for: .normal)
@@ -99,6 +102,7 @@ final class LoginViewController: UIViewController {
         return element
     }()
 
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -107,6 +111,7 @@ final class LoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
 
+    // MARK: - Private Methods
     private func setupViews() {
         view.addSubview(whitePartOfScreen)
         view.addSubview(cafeLogoImageView)
@@ -138,6 +143,7 @@ final class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extension UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textField(
         _ textField: UITextField,

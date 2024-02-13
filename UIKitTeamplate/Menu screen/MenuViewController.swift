@@ -3,7 +3,9 @@
 
 import UIKit
 
+// Класс отвечает за отображение главного меню приложения.
 final class MenuViewController: UIViewController {
+    // MARK: - Private Properties
     private lazy var cafeLogoImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 100, y: 49, width: 175, height: 76)
@@ -24,6 +26,7 @@ final class MenuViewController: UIViewController {
         element.backgroundColor = .buttonBlue
         element.layer.cornerRadius = 22
         element.setTitle("L", for: .normal)
+        element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         element.tintColor = .white
         element.frame = CGRect(x: 311, y: 147, width: 44, height: 44)
         return element
@@ -32,10 +35,10 @@ final class MenuViewController: UIViewController {
     private lazy var helloLabel: UILabel = {
         let element = UILabel()
         element.text = "Добро пожаловать,\nГость"
-        element.textColor = .white
+        element.textColor = .lightBrown
         element.numberOfLines = 2
-        element.font = .systemFont(ofSize: 16, weight: .bold)
-        element.frame = CGRect(x: 20, y: 147, width: 158, height: 44)
+        element.font = UIFont(name: "Verdana-Bold", size: 16)
+        element.frame = CGRect(x: 20, y: 147, width: 185, height: 44)
         return element
     }()
 
@@ -65,7 +68,7 @@ final class MenuViewController: UIViewController {
         let element = UILabel()
         element.text = "Пти пате аля «РюсЪ»"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
+        element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.frame = CGRect(x: 25, y: 30.5, width: 220, height: 19)
         return element
     }()
@@ -88,8 +91,8 @@ final class MenuViewController: UIViewController {
     private lazy var coffeeLabel: UILabel = {
         let element = UILabel()
         element.text = "Горячiя напитки"
+        element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
         element.frame = CGRect(x: 25, y: 30, width: 180, height: 19)
         return element
     }()
@@ -114,7 +117,7 @@ final class MenuViewController: UIViewController {
         let element = UILabel()
         element.text = "Кофий"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
+        element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.frame = CGRect(x: 25, y: 30.5, width: 180, height: 19)
         return element
     }()
@@ -131,7 +134,7 @@ final class MenuViewController: UIViewController {
         let element = UILabel()
         element.text = "Адреса кофеен"
         element.textColor = .black
-        element.font = .systemFont(ofSize: 16, weight: .bold)
+        element.font = UIFont(name: "Verdana-Bold", size: 16)
         element.frame = CGRect(x: 15, y: 12, width: 150, height: 15)
         return element
     }()
@@ -141,7 +144,7 @@ final class MenuViewController: UIViewController {
         element.text = "Разрѣшите доступъ къ ​геолокаціи для поиска ближайшей кофейни"
         element.textColor = .gray
         element.numberOfLines = 2
-        element.font = .systemFont(ofSize: 12, weight: .light)
+        element.font = UIFont(name: "Verdana", size: 12)
         element.frame = CGRect(x: 15, y: 30, width: 260, height: 30)
         return element
     }()
@@ -153,11 +156,15 @@ final class MenuViewController: UIViewController {
         return element
     }()
 
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         view.backgroundColor = .brownBase
     }
+
+    // MARK: - Private Methods
 
     private func setupViews() {
         view.addSubview(cafeLogoImageView)
@@ -181,7 +188,7 @@ final class MenuViewController: UIViewController {
     }
 
     @objc private func okButtonPressed() {
-        let menuViewController = ThanksScreenViewController()
+        let menuViewController = OrderCofeeViewController()
         menuViewController.modalPresentationStyle = .fullScreen
         present(menuViewController, animated: true, completion: nil)
     }

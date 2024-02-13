@@ -3,7 +3,10 @@
 
 import UIKit
 
+/// Класс отвечает за отображение экрана благодарности после завершения заказа.
 final class ThanksScreenViewController: UIViewController {
+    // MARK: - Private Properties
+
     private lazy var flowerImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 92, y: 58, width: 200, height: 86.62)
@@ -20,7 +23,7 @@ final class ThanksScreenViewController: UIViewController {
 
     private lazy var okButton: UIButton = {
         let element = UIButton(type: .system)
-        element.titleLabel?.font = .systemFont(ofSize: 16)
+        element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         element.setTitleColor(.white, for: .normal)
         element.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
         element.setTitle("Хорошо", for: .normal)
@@ -30,6 +33,7 @@ final class ThanksScreenViewController: UIViewController {
         return element
     }()
 
+    // Создание лейбла с промокодом
     private lazy var promoLabel: UILabel = {
         let element = UILabel()
         element.text = """
@@ -55,13 +59,7 @@ final class ThanksScreenViewController: UIViewController {
         return element
     }()
 
-    @objc private func okButtonPressed() {
-        dismiss(animated: true) {
-            let menuViewController = MenuViewController()
-            menuViewController.modalPresentationStyle = .fullScreen
-            self.present(menuViewController, animated: true, completion: nil)
-        }
-    }
+    // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +67,24 @@ final class ThanksScreenViewController: UIViewController {
         view.backgroundColor = .white
     }
 
+    // MARK: - Private Methods
+
     private func setupViews() {
         view.addSubview(flowerImageView)
         view.addSubview(thanksImageView)
         view.addSubview(okButton)
         view.addSubview(promoLabel)
         view.addSubview(cancelLabel)
+    }
+
+    // MARK: - Actions
+
+    // Обработчик нажатия на кнопку "Хорошо"
+    @objc private func okButtonPressed() {
+        dismiss(animated: true) {
+            let menuViewController = MenuViewController()
+            menuViewController.modalPresentationStyle = .fullScreen
+            self.present(menuViewController, animated: true, completion: nil)
+        }
     }
 }
