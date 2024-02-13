@@ -7,7 +7,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - Private Properties
-    private lazy var whitePartOfScreen: UIView = {
+    private lazy var whitePartOfScreenView: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 0, y: 248, width: 375, height: 564)
         element.backgroundColor = .white
@@ -88,14 +88,14 @@ final class LoginViewController: UIViewController {
         return element
     }()
 
-    private lazy var emailGreyLine: UIView = {
+    private lazy var emailGreyLineView: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 20, y: 138, width: 335, height: 1)
         element.backgroundColor = .gray
         return element
     }()
 
-    private lazy var passwordGreyLine: UIView = {
+    private lazy var passwordGreyLineView: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 20, y: 214, width: 335, height: 1)
         element.backgroundColor = .gray
@@ -113,17 +113,17 @@ final class LoginViewController: UIViewController {
 
     // MARK: - Private Methods
     private func setupViews() {
-        view.addSubview(whitePartOfScreen)
+        view.addSubview(whitePartOfScreenView)
         view.addSubview(cafeLogoImageView)
-        whitePartOfScreen.addSubview(authorizationLabel)
-        whitePartOfScreen.addSubview(loginLabel)
-        whitePartOfScreen.addSubview(passwordLabel)
-        whitePartOfScreen.addSubview(hidenEyeButton)
-        whitePartOfScreen.addSubview(passwordTextField)
-        whitePartOfScreen.addSubview(emailTextField)
-        whitePartOfScreen.addSubview(loginButton)
-        whitePartOfScreen.addSubview(emailGreyLine)
-        whitePartOfScreen.addSubview(passwordGreyLine)
+        whitePartOfScreenView.addSubview(authorizationLabel)
+        whitePartOfScreenView.addSubview(loginLabel)
+        whitePartOfScreenView.addSubview(passwordLabel)
+        whitePartOfScreenView.addSubview(hidenEyeButton)
+        whitePartOfScreenView.addSubview(passwordTextField)
+        whitePartOfScreenView.addSubview(emailTextField)
+        whitePartOfScreenView.addSubview(loginButton)
+        whitePartOfScreenView.addSubview(emailGreyLineView)
+        whitePartOfScreenView.addSubview(passwordGreyLineView)
     }
 
     @objc private func hideButtonPressed() {
