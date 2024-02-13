@@ -84,12 +84,8 @@ final class ThanksScreenViewController: UIViewController {
 
     // MARK: - Actions
 
-    // Обработчик нажатия на кнопку "Хорошо"
+    // Обработчик нажатия на кнопку "Хорошо" с переходом на экран Menu
     @objc private func okButtonPressed() {
-        dismiss(animated: true) {
-            let menuViewController = MenuViewController()
-            menuViewController.modalPresentationStyle = .fullScreen
-            self.present(menuViewController, animated: true, completion: nil)
-        }
+        dismiss(animated: true)
     }
 }

@@ -207,7 +207,7 @@ final class MenuViewController: UIViewController {
         locationButton.addSubview(locationImageView)
     }
 
-    // Метод для перехода на экран с Меню
+    // Метод для перехода на экран с Кофе
     @objc private func menuButtonPressed() {
         let menuViewController = OrderCofeeViewController()
         menuViewController.modalPresentationStyle = .fullScreen
