@@ -18,7 +18,6 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         element.layer.cornerRadius = 12
         element.layer.borderColor = UIColor.buttonBlue.cgColor
         element.frame = CGRect(x: 15, y: 164, width: 165, height: 165)
-//        element.addTarget(self, action: #selector(roastingDarkButtonTouchDown), for: .touchDown)
         element.addTarget(self, action: #selector(roastingDarkButtonTouchUpInside), for: .touchUpInside)
         return element
     }()
@@ -31,7 +30,6 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         element.layer.cornerRadius = 12
         element.layer.borderColor = UIColor.buttonBlue.cgColor
         element.frame = CGRect(x: 195, y: 164, width: 165, height: 165)
-//        element.addTarget(self, action: #selector(roastingLightButtonTouchDown), for: .touchDown)
         element.addTarget(self, action: #selector(roastingLightButtonTouchUpInside), for: .touchUpInside)
         return element
     }()
@@ -119,38 +117,33 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         roastingLightButton.addSubview(roastingLightLabel)
     }
 
-//    // Обработчик нажатия на кнопку "Темная обжарка". Установка рамки.
-//    @objc private func roastingDarkButtonTouchDown() {
-//        roastingDarkButton.layer.borderWidth = 1
-//        roastingLightButton.layer.borderWidth = 0
-//    }
-
+    // Обработчик нажатия на кнопку "Темная обжарка"
     @objc private func roastingDarkButtonTouchUpInside() {
+        // Выделение рамки нажатой кнопки
         roastingDarkButton.layer.borderWidth = 1
         roastingLightButton.layer.borderWidth = 0
         roastingDarkButton.backgroundColor = .coffeeButton
+        // Передачи данных на главный экран для смены информации
         if let selectedImage = roastingDarkImageView.image {
             delegate?.didSelectRoastingImage(selectedImage)
         }
         delegate?.didSelectRoastText(roastingDarkLabel.text ?? "")
     }
 
-//    // Обработчик нажатия на кнопку "Светлая обжарка". Установка рамки.
-//    @objc private func roastingLightButtonTouchDown() {
-//        roastingLightButton.layer.borderWidth = 1
-//        roastingDarkButton.layer.borderWidth = 0
-//    }
-
+    // Обработчик нажатия на кнопку "Светлая обжарка"
     @objc private func roastingLightButtonTouchUpInside() {
+        // Выделение рамки нажатой кнопки
         roastingLightButton.layer.borderWidth = 1
         roastingDarkButton.layer.borderWidth = 0
         roastingLightButton.backgroundColor = .coffeeButton
+        // Передачи данных на главный экран для смены информации
         if let selectedImage = roastingLightImageView.image {
             delegate?.didSelectRoastingImage(selectedImage)
         }
         delegate?.didSelectRoastText(roastingLightLabel.text ?? "")
     }
 
+    // Закрытие экрана
     @objc private func closeButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
