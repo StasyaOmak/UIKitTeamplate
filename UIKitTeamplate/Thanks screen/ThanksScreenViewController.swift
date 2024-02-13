@@ -7,6 +7,7 @@ import UIKit
 final class ThanksScreenViewController: UIViewController {
     // MARK: - Private Properties
 
+    // Добавление картинки с цветами
     private lazy var flowerImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 92, y: 58, width: 200, height: 86.62)
@@ -14,6 +15,7 @@ final class ThanksScreenViewController: UIViewController {
         return element
     }()
 
+    // Добавление картинки "Спасибо за заказ"
     private lazy var thanksImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 75, y: 184, width: 235, height: 128)
@@ -21,6 +23,7 @@ final class ThanksScreenViewController: UIViewController {
         return element
     }()
 
+    // Создание кнопки Хорошо
     private lazy var okButton: UIButton = {
         let element = UIButton(type: .system)
         element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -49,6 +52,7 @@ final class ThanksScreenViewController: UIViewController {
         return element
     }()
 
+    // Создание лейбла для закрытия экрана
     private lazy var cancelLabel: UILabel = {
         let element = UILabel()
         element.text = "X"
@@ -69,6 +73,7 @@ final class ThanksScreenViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    // Добавление вью на экран
     private func setupViews() {
         view.addSubview(flowerImageView)
         view.addSubview(thanksImageView)

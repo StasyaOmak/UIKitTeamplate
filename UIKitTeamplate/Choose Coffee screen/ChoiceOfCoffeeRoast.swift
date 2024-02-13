@@ -6,6 +6,7 @@ import UIKit
 /// Класс отвечает за экран выбора степени обжарки кофе.
 final class ChoiceOfCoffeeRoast: UIViewController {
     // MARK: - Properties
+
     var delegate: CoffeeRoastSelectionDelegate?
     var selectedRoastText: String?
 
@@ -20,7 +21,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         element.addTarget(self, action: #selector(roastingDarkButtonTouchUpInside), for: .touchUpInside)
         return element
     }()
-    
+
     lazy var roastingLightButton: UIButton = {
         let element = UIButton()
         element.layer.cornerRadius = 16
@@ -34,6 +35,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     }()
 
     // MARK: - Private Properties
+
     private lazy var closeButton: UIButton = {
         let element = UIButton()
         element.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -88,6 +90,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     }()
 
     // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -95,6 +98,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     }
 
     // MARK: - Private Methods
+
     private func setupViews() {
         view.addSubview(closeButton)
         view.addSubview(choiceLabel)

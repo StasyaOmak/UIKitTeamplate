@@ -10,9 +10,9 @@ protocol CoffeeRoastSelectionDelegate: AnyObject {
 
 final class OrderCofeeViewController: UIViewController {
     var selectedRoastText: String?
-    
-    
-// MARK: - Private Properties
+
+    // MARK: - Private Properties
+
     private lazy var roastingButton: UIButton = {
         let element = UIButton()
         element.layer.cornerRadius = 16
@@ -40,8 +40,8 @@ final class OrderCofeeViewController: UIViewController {
         return element
     }()
 
-    
     // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -49,12 +49,13 @@ final class OrderCofeeViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+
     private func setupViews() {
         view.addSubview(roastingButton)
         roastingButton.addSubview(roastingImageView)
         roastingButton.addSubview(roastingLabel)
     }
-    
+
     @objc private func loginButtonPressed() {
         let coffeeRoast = ChoiceOfCoffeeRoast()
         coffeeRoast.delegate = self // экстра
@@ -71,6 +72,7 @@ final class OrderCofeeViewController: UIViewController {
 }
 
 // MARK: - Extension CoffeeRoastSelectionDelegate
+
 extension OrderCofeeViewController: CoffeeRoastSelectionDelegate {
     func didSelectRoastingImage(_ image: UIImage) {
         roastingImageView.image = image

@@ -5,8 +5,8 @@ import UIKit
 
 /// Класс отвечает за авторизацию пользователя при входе в приложение
 final class LoginViewController: UIViewController {
-    
     // MARK: - Private Properties
+
     private lazy var whitePartOfScreenView: UIView = {
         let element = UIView()
         element.frame = CGRect(x: 0, y: 248, width: 375, height: 564)
@@ -103,6 +103,7 @@ final class LoginViewController: UIViewController {
     }()
 
     // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -112,6 +113,7 @@ final class LoginViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+
     private func setupViews() {
         view.addSubview(whitePartOfScreenView)
         view.addSubview(cafeLogoImageView)
@@ -144,6 +146,7 @@ final class LoginViewController: UIViewController {
 }
 
 // MARK: - Extension UITextFieldDelegate
+
 extension LoginViewController: UITextFieldDelegate {
     func textField(
         _ textField: UITextField,
