@@ -5,13 +5,13 @@ import UIKit
 
 /// Экран отображает благодарность  после завершения заказа.
 final class ThanksScreenViewController: UIViewController {
-    // MARK: - Private Properties
+    // MARK: - Visual Components
 
     // Добавление картинки с цветами
     private lazy var flowerImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 92, y: 58, width: 200, height: 86.62)
-        element.image = UIImage(named: "flowers")
+        element.image = .flowers
         return element
     }()
 
@@ -19,27 +19,27 @@ final class ThanksScreenViewController: UIViewController {
     private lazy var thanksImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 75, y: 184, width: 235, height: 128)
-        element.image = UIImage(named: "thanksForOrder")
+        element.image = .thanksForOrder
         return element
     }()
 
     // Создание кнопки Хорошо
     private lazy var okButton: UIButton = {
         let element = UIButton(type: .system)
-        element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
+        element.titleLabel?.font = UIFont(name: Constants.verdanaBold, size: 16)
         element.setTitleColor(.white, for: .normal)
         element.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
-        element.setTitle("Хорошо", for: .normal)
-        element.backgroundColor = UIColor(named: "buttonBlue")
+        element.setTitle(Constants.okText, for: .normal)
+        element.backgroundColor = .buttonBlue
         element.layer.cornerRadius = 12
-        element.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
+        element.addTarget(self, action: #selector(dismissPressed), for: .touchUpInside)
         return element
     }()
 
     // Создание лейбла с промокодом
     private lazy var promoLabel: UILabel = {
         let element = UILabel()
-        element.text = AppConstants.promoText
+        element.text = Constants.promoText
         element.textColor = .gray
         element.numberOfLines = 4
         element.textAlignment = .center
@@ -76,14 +76,13 @@ final class ThanksScreenViewController: UIViewController {
         view.addSubview(promoLabel)
         view.addSubview(cancelLabel)
 
-        // Установка цвета для экрана
         view.backgroundColor = .white
     }
 
     // MARK: - Actions
 
     // Обработчик нажатия на кнопку "Хорошо" с переходом на экран Menu
-    @objc private func okButtonPressed() {
+    @objc private func dismissPressed() {
         dismiss(animated: true)
     }
 }

@@ -15,7 +15,7 @@ protocol CoffeeRoastSelectionDelegate: AnyObject {
 final class OrderCofeeViewController: UIViewController {
     var selectedRoastText: String?
 
-    // MARK: - Private Properties
+    // MARK: - Visual Components
 
     // Кнопка для выбора степени обжарки (темная)
     private lazy var roastingButton: UIButton = {
@@ -24,7 +24,7 @@ final class OrderCofeeViewController: UIViewController {
         element.backgroundColor = .coffeeButton
         element.layer.cornerRadius = 12
         element.frame = CGRect(x: 15, y: 482, width: 165, height: 165)
-        element.addTarget(self, action: #selector(loginButtonPressed), for: .touchDown)
+        element.addTarget(self, action: #selector(roastingButtonTapped), for: .touchDown)
         return element
     }()
 
@@ -32,17 +32,17 @@ final class OrderCofeeViewController: UIViewController {
     lazy var roastingImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 31, y: 17, width: 100, height: 100)
-        element.image = UIImage(named: "darkRoast")
+        element.image = .darkRoast
         return element
     }()
 
     // Текст выбранной степени обжарки (темная)
     lazy var roastingLabel: UILabel = {
         let element = UILabel()
-        element.text = AppConstants.roastingDark
+        element.text = Constants.roastingDark
         element.textColor = .black
         element.numberOfLines = 2
-        element.font = UIFont(name: "Verdana", size: 13)
+        element.font = UIFont(name: Constants.verdana, size: 13)
         element.frame = CGRect(x: 55, y: 117, width: 165, height: 34)
         return element
     }()
@@ -62,22 +62,15 @@ final class OrderCofeeViewController: UIViewController {
         roastingButton.addSubview(roastingImageView)
         roastingButton.addSubview(roastingLabel)
 
-        // Установка цвета для экрана
         view.backgroundColor = .white
     }
 
     // Обработка нажатия кнопки выбора степени обжарки
-    @objc private func loginButtonPressed() {
-        let coffeeRoast = ChoiceOfCoffeeRoast()
+    @objc private func roastingButtonTapped() {
+        let coffeeRoast = ChoiceCoffeeRoast()
         coffeeRoast.delegate = self
-        // Выделение по дефолту кнопки на экране ChoiceOfCoffeeRoast
-        if roastingLabel.text == AppConstants.roastingDark {
-            coffeeRoast.roastingDarkButton.layer.borderWidth = 1
-            coffeeRoast.roastingLightButton.layer.borderWidth = 0
-        } else {
-            coffeeRoast.roastingLightButton.layer.borderWidth = 1
-            coffeeRoast.roastingDarkButton.layer.borderWidth = 0
-        }
+        coffeeRoast.roastingDarkButton.layer.borderWidth = roastingLabel.text == Constants.roastingDark ? 1 : 0
+        coffeeRoast.roastingLightButton.layer.borderWidth = roastingLabel.text == Constants.roastingDark ? 0 : 1
         coffeeRoast.modalPresentationStyle = .formSheet
         present(coffeeRoast, animated: true, completion: nil)
     }

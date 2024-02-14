@@ -1,10 +1,10 @@
-// AppConstants.swift
+// Constants.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// Константы для приложения
-struct AppConstants {
+struct Constants {
     static let vektorClose = "vector"
     static let vectorOpen = "vectorOpen"
     static let roastingDark = "Темная\nобжарка"
@@ -26,5 +26,10 @@ struct AppConstants {
     static let passwordText = "Пароль"
     static let enterPasswordText = "Введите пароль"
     static let enterEmailText = "Введите почту"
-    static let whitePartView = CGRect(x: 0, y: 248, width: 375, height: 564)
+    static let enterButtonName = "Войти"
+    static let verdanaBold = "Verdana-Bold"
+    static let verdana = "Verdana"
+    static let verdanaBoldItalic = "Verdana-BoldItalic"
+    static let okText = "Хорошо"
+    static let whitePartViewRect = CGRect(x: 0, y: 248, width: 375, height: 564)
 }
