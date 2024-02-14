@@ -49,7 +49,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     // Метка выбора степени обжарки
     private lazy var choiceLabel: UILabel = {
         let element = UILabel()
-        element.text = "Уточните обжарку зеренъ"
+        element.text = AppConstants.roastingCheckResult
         element.textColor = .black
         element.textAlignment = .center
         element.font = UIFont(name: "Verdana-Bold", size: 18)
@@ -68,7 +68,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     // Лейбл для темной обжарки
     private lazy var roastingDarkLabel: UILabel = {
         let element = UILabel()
-        element.text = "Темная\nобжарка"
+        element.text = AppConstants.roastingDark
         element.textColor = .black
         element.numberOfLines = 2
         element.font = UIFont(name: "Verdana", size: 13)
@@ -87,7 +87,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     // Лейбл для светлой обжарки
     private lazy var roastingLightLabel: UILabel = {
         let element = UILabel()
-        element.text = "Свѣтлая\nобжарка"
+        element.text = AppConstants.roastingLight
         element.textColor = .black
         element.numberOfLines = 2
         element.font = UIFont(name: "Verdana", size: 13)
@@ -114,7 +114,7 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         view.addSubview(roastingLightButton)
         roastingLightButton.addSubview(roastingLightImageView)
         roastingLightButton.addSubview(roastingLightLabel)
-        
+
         // Установка цвета для экрана
         view.backgroundColor = .white
     }

@@ -39,11 +39,7 @@ final class ThanksScreenViewController: UIViewController {
     // Создание лейбла с промокодом
     private lazy var promoLabel: UILabel = {
         let element = UILabel()
-        element.text = """
-        Разскажи о насъ другу, отправь ему
-        промокодъ
-        ​ на безплатный напитокъ и получи скидку 10% на слѣдующій заказъ.
-        """
+        element.text = AppConstants.promoText
         element.textColor = .gray
         element.numberOfLines = 4
         element.textAlignment = .center
@@ -79,7 +75,7 @@ final class ThanksScreenViewController: UIViewController {
         view.addSubview(okButton)
         view.addSubview(promoLabel)
         view.addSubview(cancelLabel)
-        
+
         // Установка цвета для экрана
         view.backgroundColor = .white
     }

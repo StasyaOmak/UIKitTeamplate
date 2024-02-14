@@ -6,7 +6,7 @@ import UIKit
 /// Экран отображает главное меню приложения.
 final class MenuViewController: UIViewController {
     // MARK: - Private Properties
-    
+
     // Cвойство для создания логотипа кафе
     private lazy var cafeLogoImageView: UIImageView = {
         let element = UIImageView()
@@ -14,16 +14,16 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "cafeLogo")
         return element
     }()
-    
+
     // Cвойство для создания белой view
     private lazy var whitePartOfScreenView: UIView = {
         let element = UIView()
-        element.frame = CGRect(x: 0, y: 248, width: 375, height: 564)
+        element.frame = AppConstants.whitePartView
         element.backgroundColor = .white
         element.layer.cornerRadius = 20
         return element
     }()
-    
+
     // Cвойство для создания логотипа для клиена
     private lazy var customerButton: UIButton = {
         let element = UIButton()
@@ -35,18 +35,18 @@ final class MenuViewController: UIViewController {
         element.frame = CGRect(x: 311, y: 147, width: 44, height: 44)
         return element
     }()
-    
+
     // Свойство для создания приветственного сообщения
     private lazy var helloLabel: UILabel = {
         let element = UILabel()
-        element.text = "Добро пожаловать,\nГость"
+        element.text = AppConstants.helloText
         element.textColor = .lightBrown
         element.numberOfLines = 2
         element.font = UIFont(name: "Verdana-Bold", size: 16)
         element.frame = CGRect(x: 20, y: 147, width: 185, height: 44)
         return element
     }()
-    
+
     // Свойство для создания изображения меню
     private lazy var menuImageView: UIImageView = {
         let element = UIImageView()
@@ -54,7 +54,7 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "menu")
         return element
     }()
-    
+
     // Кнопка для выбора пирога
     private lazy var pieButton: UIButton = {
         let element = UIButton()
@@ -63,7 +63,7 @@ final class MenuViewController: UIViewController {
         element.frame = CGRect(x: 20, y: 216, width: 335, height: 80)
         return element
     }()
-    
+
     // Изображение пирога
     private lazy var pieImageView: UIImageView = {
         let element = UIImageView()
@@ -71,17 +71,17 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "pie")
         return element
     }()
-    
+
     // Лейбл для пирога
     private lazy var pieoLabel: UILabel = {
         let element = UILabel()
-        element.text = "Пти пате аля «РюсЪ»"
+        element.text = AppConstants.pieChose
         element.textColor = .black
         element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.frame = CGRect(x: 25, y: 30.5, width: 220, height: 19)
         return element
     }()
-    
+
     // Кнопка для выбора горячих напитков
     private lazy var hotDrinksButton: UIButton = {
         let element = UIButton()
@@ -90,7 +90,7 @@ final class MenuViewController: UIViewController {
         element.frame = CGRect(x: 20, y: 316, width: 335, height: 80)
         return element
     }()
-    
+
     // Изображение кружки с кофе
     private lazy var hotDrinksImageView: UIImageView = {
         let element = UIImageView()
@@ -98,17 +98,17 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "cupOfCoffee")
         return element
     }()
-    
+
     // Лейбл для горячих напитков
     private lazy var hotDrinksLabel: UILabel = {
         let element = UILabel()
-        element.text = "Горячiя напитки"
+        element.text = AppConstants.hotDrinks
         element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.textColor = .black
         element.frame = CGRect(x: 25, y: 30, width: 180, height: 19)
         return element
     }()
-    
+
     // Кнопка для выбора кофе
     private lazy var cupWithGrainsButton: UIButton = {
         let element = UIButton()
@@ -118,7 +118,7 @@ final class MenuViewController: UIViewController {
         element.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
         return element
     }()
-    
+
     // Изображение чашки с зёрнами
     private lazy var cupWithGrainsImageView: UIImageView = {
         let element = UIImageView()
@@ -126,17 +126,17 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "cupWithGrains")
         return element
     }()
-    
+
     // Лейбл для кофе
     private lazy var cupWithGrainsLabel: UILabel = {
         let element = UILabel()
-        element.text = "Кофий"
+        element.text = AppConstants.cupWithGrains
         element.textColor = .black
         element.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         element.frame = CGRect(x: 25, y: 30.5, width: 180, height: 19)
         return element
     }()
-    
+
     // Кнопка для местоположения
     private lazy var locationButton: UIButton = {
         let element = UIButton()
@@ -145,28 +145,28 @@ final class MenuViewController: UIViewController {
         element.frame = CGRect(x: 20, y: 40, width: 335, height: 70)
         return element
     }()
-    
+
     // Адреса кофеен
     private lazy var adressOfCaffeeLabel: UILabel = {
         let element = UILabel()
-        element.text = "Адреса кофеен"
+        element.text = AppConstants.adressOfCaffee
         element.textColor = .black
         element.font = UIFont(name: "Verdana-Bold", size: 16)
         element.frame = CGRect(x: 15, y: 12, width: 150, height: 15)
         return element
     }()
-    
+
     // Текст разрешения для использования геолокации
     private lazy var infoAdressLabel: UILabel = {
         let element = UILabel()
-        element.text = "Разрѣшите доступъ къ ​геолокаціи для поиска ближайшей кофейни"
+        element.text = AppConstants.infoAdress
         element.textColor = .gray
         element.numberOfLines = 2
         element.font = UIFont(name: "Verdana", size: 12)
         element.frame = CGRect(x: 15, y: 30, width: 260, height: 30)
         return element
     }()
-    
+
     // Картинка геолокации
     private lazy var locationImageView: UIImageView = {
         let element = UIImageView()
@@ -174,16 +174,16 @@ final class MenuViewController: UIViewController {
         element.image = UIImage(named: "locationPoint")
         return element
     }()
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
-    
+
     // MARK: - Private Methods
-    
+
     // Добавление вью на экран
     private func setupViews() {
         view.addSubview(cafeLogoImageView)
@@ -204,11 +204,11 @@ final class MenuViewController: UIViewController {
         locationButton.addSubview(adressOfCaffeeLabel)
         locationButton.addSubview(infoAdressLabel)
         locationButton.addSubview(locationImageView)
-        
+
         // Установка цвета для экрана
         view.backgroundColor = .brownBase
     }
-    
+
     // Метод для перехода на экран с Кофе
     @objc private func menuButtonPressed() {
         let menuViewController = OrderCofeeViewController()
