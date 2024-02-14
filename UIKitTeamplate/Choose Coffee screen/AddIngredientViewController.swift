@@ -12,11 +12,11 @@ final class AddIngredientViewController: UIViewController {
     private let closeButton = UIButton()
 
     // Свитчи  для добавления продуктов
-    private let firsSwitch = UISwitch()
-    private let secondSwitch = UISwitch()
-    private let thridSwitch = UISwitch()
-    private let fourthSwitch = UISwitch()
-    private let fifthSwitch = UISwitch()
+    private let milkSwitch = UISwitch()
+    private let syropSwitch = UISwitch()
+    private let soyMilkSwitch = UISwitch()
+    private let almondMilkSwitch = UISwitch()
+    private let espressoSwitch = UISwitch()
 
     // Наименование ингридиентов
     private let milkLabel = UILabel()
@@ -26,11 +26,9 @@ final class AddIngredientViewController: UIViewController {
     private let espressoLabel = UILabel()
 
     // MARK: - Private Properties
-
+    
     // Значение добавлены ли ингредиенты
     private var isAdded = false
-
-    // MARK: - СallBacks
 
     // Сlosure принимает параметр выбрано ли что-то из доп. ингредиентов
     private var productsIsAdded: ((Bool) -> Void)?
@@ -97,11 +95,11 @@ final class AddIngredientViewController: UIViewController {
     // Метод проверяет активен ли хотя бы один из свитчей(выбран ли ингридиент)
     private func checkIsAdded() {
         guard
-            !firsSwitch.isOn,
-            !secondSwitch.isOn,
-            !thridSwitch.isOn,
-            !fourthSwitch.isOn,
-            !fifthSwitch.isOn
+            !milkSwitch.isOn,
+            !syropSwitch.isOn,
+            !soyMilkSwitch.isOn,
+            !almondMilkSwitch.isOn,
+            !espressoSwitch.isOn
         else {
             isAdded = true
             return
@@ -111,11 +109,11 @@ final class AddIngredientViewController: UIViewController {
 
     // Метод задает параметры свитчам
     private func setupSwitch() {
-        configSwitch(nameSWich: firsSwitch, top: 124)
-        configSwitch(nameSWich: secondSwitch, top: 176)
-        configSwitch(nameSWich: thridSwitch, top: 226)
-        configSwitch(nameSWich: fourthSwitch, top: 276)
-        configSwitch(nameSWich: fifthSwitch, top: 326)
+        configSwitch(nameSWich: milkSwitch, top: 124)
+        configSwitch(nameSWich: syropSwitch, top: 176)
+        configSwitch(nameSWich: soyMilkSwitch, top: 226)
+        configSwitch(nameSWich: almondMilkSwitch, top: 276)
+        configSwitch(nameSWich: espressoSwitch, top: 326)
     }
 
     // Общий метод настройки наименований продуктов
