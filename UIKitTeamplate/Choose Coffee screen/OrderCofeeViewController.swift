@@ -9,7 +9,6 @@ final class OrderCofeeViewController: UIViewController {
     
     private enum Constants {
         static let promocodeText  = "Лови промокод roadmaplove на любой напиток из Кофейнов"
-        static let roastingTitle = "Темная  \n обжарка"
         static let addProductsTitle = "Дополнительные \n ингредиенты"
         static let modificationTitle = "Модификация"
         static let priceText = "Цѣна - 100 руб"
@@ -19,7 +18,6 @@ final class OrderCofeeViewController: UIViewController {
         static let cappuccino = "Капучино"
         static let latte = "Латте"
         static let chekMark = "СheckMark"
-        static let roasting = "Зерна"
         static let plus = "Плюс"
         static let navigation = "Стрелка 2"
         static let share = "telegram"
@@ -35,8 +33,6 @@ final class OrderCofeeViewController: UIViewController {
         UIImage(named: Constants.latte)
     ]
 
-    
-    private let roastingButton = UIButton()
     private let plusButton = UIButton()
     private let forRoastingLabel = UILabel()
     private let forPlusLabel = UILabel()
@@ -182,18 +178,11 @@ final class OrderCofeeViewController: UIViewController {
     }
 
     private func setupButton() {
-        configButton(nameButton: roastingButton, left: 15, image: Constants.roasting)
         configButton(nameButton: plusButton, left: 195, image: Constants.plus)
 
         plusButton.addTarget(
             self,
             action: #selector(showAddIngridients),
-            for: .touchUpInside
-        )
-
-        roastingButton.addTarget(
-            self,
-            action: #selector(presentChooseCofeeViewController),
             for: .touchUpInside
         )
     }
@@ -209,7 +198,6 @@ final class OrderCofeeViewController: UIViewController {
     }
 
     private func setupTitle() {
-        configTitle(nameLabel: forRoastingLabel, left: 15, title: Constants.roastingTitle)
         configTitle(nameLabel: forPlusLabel, left: 195, title: Constants.addProductsTitle)
     }
 
@@ -271,11 +259,6 @@ final class OrderCofeeViewController: UIViewController {
     @objc private func showPayCheckViewController() {
         let checkVC = PayCheckViewController(pushThanks: pushThanksHandler)
         navigationController?.present(checkVC, animated: true)
-    }
-
-    @objc private func presentChooseCofeeViewController() {
-        let chooseVC = ChooseCofeeViewController()
-        navigationController?.present(chooseVC, animated: true)
     }
 
     @objc private func showAddIngridients() {
