@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Класс отвечает за авторизацию пользователя при входе в приложение
+/// Экран авторизации пользователя при входе в приложение
 final class LoginViewController: UIViewController {
     // MARK: - Private Properties
 

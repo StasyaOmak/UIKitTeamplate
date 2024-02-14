@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Класс отвечает за отображение экрана благодарности после завершения заказа.
+/// Экран отображает благодарность  после завершения заказа.
 final class ThanksScreenViewController: UIViewController {
     // MARK: - Private Properties
 

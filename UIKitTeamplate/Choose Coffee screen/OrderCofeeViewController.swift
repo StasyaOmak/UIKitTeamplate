@@ -10,7 +10,7 @@ protocol CoffeeRoastSelectionDelegate: AnyObject {
     // Метод для передачи текста выбранной степени обжарки
     func didSelectRoastText(_ text: String)
 }
-
+/// Экран с выбором позиций кофе для заказа 
 final class OrderCofeeViewController: UIViewController {
     var selectedRoastText: String?
 

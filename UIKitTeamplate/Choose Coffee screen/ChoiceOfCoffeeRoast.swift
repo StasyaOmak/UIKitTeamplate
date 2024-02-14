@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Класс отвечает за экран выбора степени обжарки кофе.
+/// Экран с  выбором степени обжарки кофе.
 final class ChoiceOfCoffeeRoast: UIViewController {
     // MARK: - Properties
 

@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Класс отвечает за отображение главного меню приложения.
+/// Экран отображает главное меню приложения.
 final class MenuViewController: UIViewController {
     // MARK: - Private Properties
 
