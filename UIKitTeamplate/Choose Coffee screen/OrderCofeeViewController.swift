@@ -3,45 +3,64 @@
 
 import UIKit
 
-// Класс заказа кофе
+// Экран заказа кофе
 final class OrderCofeeViewController: UIViewController {
     // MARK: - Constants
+    
+    private enum Constants {
+        static let promocodeText  = "Лови промокод roadmaplove на любой напиток из Кофейнов"
+        static let roastingTitle = "Темная  \n обжарка"
+        static let addProductsTitle = "Дополнительные \n ингредиенты"
+        static let modificationTitle = "Модификация"
+        static let priceText = "Цѣна - 100 руб"
+        static let buttonTitle = "Заказть"
+        
+        static let americano = "Американо"
+        static let cappuccino = "Капучино"
+        static let latte = "Латте"
+        static let chekMark = "СheckMark"
+        static let roasting = "Зерна"
+        static let plus = "Плюс"
+        static let navigation = "Стрелка 2"
+        static let share = "telegram"
+    }
 
-    // Верхнее вью отображает картинку выбранного кофе
+    // MARK: - Visual Components
+
     private let topView = UIView()
     private let cofeeImageView = UIImageView()
-    private let imagesCofee = [
-        UIImage(named: "Американо"),
-        UIImage(named: "Капучино"),
-        UIImage(named: "Латте")
+    private let cofeeImages = [
+        UIImage(named: Constants.americano),
+        UIImage(named: Constants.cappuccino),
+        UIImage(named: Constants.latte)
     ]
 
-    // кнопки: выбор обжарки, добавление ингредиентов
+    
     private let roastingButton = UIButton()
     private let plusButton = UIButton()
-    private let labelForRoasting = UILabel()
-    private let labelForPlus = UILabel()
+    private let forRoastingLabel = UILabel()
+    private let forPlusLabel = UILabel()
 
     private let priceLabel = UILabel()
     private let orderButton = UIButton()
     private let modificationLabel = UILabel()
 
-    // кнопки для навигейшен бара
+    
     private let leftButton = UIButton()
     private let rightButton = UIButton()
 
-    // массив для SegmentedControl
-    private let nameCofee = ["Американо", "Капучино", "Латте"]
+    
+    private let cofeeNames = [Constants.americano, Constants.cappuccino, Constants.latte]
 
     // MARK: - Private Properties
 
-    private var cofeeSegment = UISegmentedControl()
+    private var cofeeSegmentedControl = UISegmentedControl()
 
     // closure принимает параметр выбрано ли что-то из доп. ингредиентов
-    private var productsIsAdded: ((Bool) -> Void)?
+    private var productsIsAddedHandler: ((Bool) -> Void)?
 
     // closure вызывается при нажатии на "Оплатить"( в PayCheck) переход на эран "Thanks"
-    private var pushThanks: (() -> ())?
+    private var pushThanksHandler: (() -> ())?
 
 // Протокол делегата выбора степени обжарки кофе
 protocol CoffeeRoastSelectionDelegate: AnyObject {
@@ -88,16 +107,12 @@ final class OrderCofeeViewController: UIViewController {
     }()
     // MARK: - Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configTop()
-        configImageCofee()
-        configSegment()
+        configView()
+        configTopView()
+        configImageViewCofee()
+        configSegmented()
         setupButton()
         setupTitle()
         configModification()
@@ -111,9 +126,14 @@ final class OrderCofeeViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    private func configView() {
+        view.backgroundColor = .white
+    }
+    
     // Метод задает значение кложуре для перехода на экран "Спасибо за покупку"
     private func configPush() {
-        pushThanks = {
+        pushThanksHandler = { [ weak self ] in
+            guard let self = self else { return }
             let thanksVC = ThanksScreenViewController()
             thanksVC.view.backgroundColor = .white
             self.navigationController?.pushViewController(thanksVC, animated: true)
@@ -122,14 +142,16 @@ final class OrderCofeeViewController: UIViewController {
 
     // Метод задает значение кложуре чтобы отобразить галочку в кнопке если добавлен хоть один из ингридиентов
     private func configureProductsIsAdded() {
-        productsIsAdded = { isAdded in
-            guard isAdded else { return }
-            self.plusButton.setImage(UIImage(named: "СheckMark"), for: .normal)
+        productsIsAddedHandler = { [ weak self ] isAdded in
+            guard
+                let self = self,
+                isAdded
+            else { return }
+            self.plusButton.setImage(UIImage(named: Constants.chekMark), for: .normal)
         }
     }
 
-    // Метод настройки верхней части вью
-    private func configTop() {
+    private func configTopView() {
         view.addSubview(topView)
         topView.frame = CGRect(x: 0, y: 0, width: 375, height: 346)
         topView.layer.cornerRadius = 20
@@ -137,22 +159,19 @@ final class OrderCofeeViewController: UIViewController {
         topView.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.831372549, blue: 0.737254902, alpha: 1)
     }
 
-    // Метод настройки картинки с кофе в верхней части вью
-    private func configImageCofee() {
-        cofeeImageView.image = UIImage(named: "Американо")
+    private func configImageViewCofee() {
+        cofeeImageView.image = UIImage(named: Constants.buttonTitle)
         topView.addSubview(cofeeImageView)
         cofeeImageView.frame = CGRect(x: 112, y: 128, width: 150, height: 150)
     }
 
-    // Метод настройки SegmentedControl
-    private func configSegment() {
-        cofeeSegment = UISegmentedControl(items: nameCofee)
-        cofeeSegment.frame = CGRect(x: 5, y: 368, width: 345, height: 44)
-        cofeeSegment.addTarget(self, action: #selector(selectImage), for: .valueChanged)
-        view.addSubview(cofeeSegment)
+    private func configSegmented() {
+        cofeeSegmentedControl = UISegmentedControl(items: cofeeNames)
+        cofeeSegmentedControl.frame = CGRect(x: 5, y: 368, width: 345, height: 44)
+        cofeeSegmentedControl.addTarget(self, action: #selector(selectImage), for: .valueChanged)
+        view.addSubview(cofeeSegmentedControl)
     }
 
-    // Общий метод для настройки кнопок: выбор обжарки, добавление ингредиентов
     private func configButton(nameButton: UIButton, left: CGFloat, image: String) {
         view.addSubview(nameButton)
         nameButton.frame = CGRect(x: left, y: 482, width: 165, height: 165)
@@ -162,10 +181,9 @@ final class OrderCofeeViewController: UIViewController {
         nameButton.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     }
 
-    // Метод задает параметры кнопкам: выбор обжарки, добавление ингредиентов
     private func setupButton() {
-        configButton(nameButton: roastingButton, left: 15, image: "Зерна")
-        configButton(nameButton: plusButton, left: 195, image: "Плюс")
+        configButton(nameButton: roastingButton, left: 15, image: Constants.roasting)
+        configButton(nameButton: plusButton, left: 195, image: Constants.plus)
 
         plusButton.addTarget(
             self,
@@ -175,12 +193,11 @@ final class OrderCofeeViewController: UIViewController {
 
         roastingButton.addTarget(
             self,
-            action: #selector(presentChooseCofee),
+            action: #selector(presentChooseCofeeViewController),
             for: .touchUpInside
         )
     }
 
-    // Общий метод настройки названий для кнопок: выбор обжарки, добавление ингредиентов
     private func configTitle(nameLabel: UILabel, left: CGFloat, title: String) {
         view.addSubview(nameLabel)
         nameLabel.frame = CGRect(x: left, y: 599, width: 165, height: 34)
@@ -191,97 +208,85 @@ final class OrderCofeeViewController: UIViewController {
         nameLabel.numberOfLines = 2
     }
 
-    // Метод задает параметры для названия кнопок
     private func setupTitle() {
-        configTitle(nameLabel: labelForRoasting, left: 15, title: "Темная  \n обжарка")
-        configTitle(nameLabel: labelForPlus, left: 195, title: "Дополнительные \n ингредиенты")
+        configTitle(nameLabel: forRoastingLabel, left: 15, title: Constants.roastingTitle)
+        configTitle(nameLabel: forPlusLabel, left: 195, title: Constants.addProductsTitle)
     }
 
-    // Метод настройки лейбла "Модификация"
     private func configModification() {
         view.addSubview(modificationLabel)
         modificationLabel.frame = CGRect(x: 15, y: 432, width: 200, height: 30)
-        modificationLabel.text = "Модификация"
+        modificationLabel.text = Constants.modificationTitle
         modificationLabel.textColor = .black
         modificationLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
     }
 
-    // Метод настройки лейбла цены
     private func configPrice() {
         view.addSubview(priceLabel)
         priceLabel.frame = CGRect(x: 15, y: 669, width: 345, height: 30)
-        priceLabel.text = "Цѣна - 100 руб"
+        priceLabel.text = Constants.priceText
         priceLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         priceLabel.textAlignment = .right
     }
 
-    // Метод настройки кнопки "Заказать"
     private func configButtonOrder() {
         view.addSubview(orderButton)
         orderButton.frame = CGRect(x: 15, y: 717, width: 345, height: 53)
         orderButton.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.7450980392, blue: 0.7803921569, alpha: 1)
-        orderButton.setTitle("Заказть", for: .normal)
+        orderButton.setTitle(Constants.buttonTitle, for: .normal)
         orderButton.setTitleColor(.white, for: .normal)
         orderButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         orderButton.layer.cornerRadius = 12
 
-        orderButton.addTarget(self, action: #selector(showCheck), for: .touchUpInside)
+        orderButton.addTarget(self, action: #selector(showPayCheckViewController), for: .touchUpInside)
     }
 
-    // Метод настройки стрелки на навигейшен баре
     private func configNavigation() {
-        leftButton.setImage(UIImage(named: "Стрелка 2"), for: .normal)
+        leftButton.setImage(UIImage(named: Constants.navigation), for: .normal)
         leftButton.backgroundColor = #colorLiteral(red: 0.9364200234, green: 0.9713943601, blue: 0.9751471877, alpha: 1)
         leftButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         leftButton.layer.cornerRadius = leftButton.frame.width / 2
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
-        leftButton.addTarget(self, action: #selector(selfPop), for: .touchUpInside)
+        leftButton.addTarget(self, action: #selector(popViewController), for: .touchUpInside)
     }
 
-    // Метод настройки кнопки Share
     private func configShare() {
-        rightButton.setImage(UIImage(named: "telegram"), for: .normal)
+        rightButton.setImage(UIImage(named: Constants.share), for: .normal)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         rightButton.addTarget(self, action: #selector(shareCode), for: .touchUpInside)
     }
 
     // Метод отправки промокода через активити
     @objc private func shareCode(sender: UIButton) {
-        let text = "Лови промокод roadmaplove на любой напиток из Кофейнов"
-        let textToShare = [text]
+        let textToShare = [Constants.promocodeText]
         let activity = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         present(activity, animated: true, completion: nil)
     }
 
-    // Метод для возврата на предыдуший экран при нажатии на стрелку
-    @objc private func selfPop() {
+    @objc private func popViewController() {
         navigationController?.popViewController(animated: true)
     }
 
-    // Метод перехода на экран чека с заказом при нажатии на кнопку "Заказать"
-    @objc private func showCheck() {
-        let checkVC = PayCheckViewController(pushThanks: pushThanks)
+    @objc private func showPayCheckViewController() {
+        let checkVC = PayCheckViewController(pushThanks: pushThanksHandler)
         navigationController?.present(checkVC, animated: true)
     }
 
-    // Метод для перехода на экран выбор обжарки при нажати на кнопку обжарки
-    @objc private func presentChooseCofee() {
+    @objc private func presentChooseCofeeViewController() {
         let chooseVC = ChooseCofeeViewController()
         navigationController?.present(chooseVC, animated: true)
     }
 
-    // Метод для мерехода на экран выбор ингридиентов при нажатии на кнопку плюс
     @objc private func showAddIngridients() {
-        let addProductsVC = AddIngredientViewController(productsIsAdded: productsIsAdded)
+        let addProductsVC = AddIngredientViewController(productsIsAdded: productsIsAddedHandler)
         navigationController?.present(addProductsVC, animated: true)
     }
 
-    // Метод настройки картинки при выборе из сегмента определенного кофе
     @objc private func selectImage(_ target: UISegmentedControl) {
-        if target == cofeeSegment {
+        if target == cofeeSegmentedControl {
             let segmentIndex = target.selectedSegmentIndex
-            cofeeImageView.image = imagesCofee[segmentIndex]
+            cofeeImageView.image = cofeeImages[segmentIndex]
         }
         setupViews()
     // MARK: - Private Methods

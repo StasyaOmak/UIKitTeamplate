@@ -13,9 +13,13 @@
 		6F073AE72B7A43AF0082979C /* ThanksScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE62B7A43AF0082979C /* ThanksScreenViewController.swift */; };
 		6F073AF22B7B4C280082979C /* ChoiceCoffeeRoast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AF12B7B4C280082979C /* ChoiceCoffeeRoast.swift */; };
 		6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A4C2B7129E0002D3883 /* AppDelegate.swift */; };
-		6F945A4F2B7129E0002D3883 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */; };
 		6F945A562B7129E1002D3883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A552B7129E1002D3883 /* Assets.xcassets */; };
 		6F945A592B7129E1002D3883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A572B7129E1002D3883 /* LaunchScreen.storyboard */; };
+		ED0A3EB12B7BB77D00199698 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB02B7BB77D00199698 /* AddIngredientViewController.swift */; };
+		ED0A3EB32B7BB87300199698 /* PayCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB22B7BB87300199698 /* PayCheckViewController.swift */; };
+		ED0A3EB62B7BC47700199698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */; };
+		EDCB7CF52B7A804000872579 /* OrderCofeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */; };
+		6FBC36652B7CEC270053489F /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36642B7CEC270053489F /* AppConstants.swift */; };
 		6FBC36652B7CEC270053489F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36642B7CEC270053489F /* Constants.swift */; };
 		6FBC36682B7CF72B0053489F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36672B7CF72B0053489F /* UITextField+Extension.swift */; };
 		6FBC366A2B7CF9750053489F /* UIDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36692B7CF9750053489F /* UIDelegate+Extension.swift */; };
@@ -32,10 +36,15 @@
 		6F073AF52B7B93FC0082979C /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
 		6F945A492B7129E0002D3883 /* UIKitTeamplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitTeamplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F945A4C2B7129E0002D3883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6F945A552B7129E1002D3883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F945A582B7129E1002D3883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F945A5A2B7129E1002D3883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED0A3EB02B7BB77D00199698 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
+		ED0A3EB22B7BB87300199698 /* PayCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCheckViewController.swift; sourceTree = "<group>"; };
+		ED0A3EB42B7BBA5200199698 /* UIKitTeamplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitTeamplate.entitlements; sourceTree = "<group>"; };
+		ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCofeeViewController.swift; sourceTree = "<group>"; };
+		6FBC36642B7CEC270053489F /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6FBC36642B7CEC270053489F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6FBC36672B7CF72B0053489F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		6FBC36692B7CF9750053489F /* UIDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDelegate+Extension.swift"; sourceTree = "<group>"; };
@@ -63,8 +72,9 @@
 		6F073AEA2B7A43F90082979C /* Choose Coffee screen */ = {
 			isa = PBXGroup;
 			children = (
-				6F073AE42B7A43870082979C /* OrderCofeeViewController.swift */,
-				6F073AF12B7B4C280082979C /* ChoiceCoffeeRoast.swift */,
+				EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */,
+				ED0A3EB02B7BB77D00199698 /* AddIngredientViewController.swift */,
+				6F073AF12B7B4C280082979C /* ChoiceOfCoffeeRoast.swift */,
 			);
 			path = "Choose Coffee screen";
 			sourceTree = "<group>";
@@ -89,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				6F945A4C2B7129E0002D3883 /* AppDelegate.swift */,
-				6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */,
+				ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */,
 				6FBC36642B7CEC270053489F /* Constants.swift */,
 			);
 			path = Delegate;
@@ -122,6 +132,8 @@
 		6F945A4B2B7129E0002D3883 /* UIKitTeamplate */ = {
 			isa = PBXGroup;
 			children = (
+				ED0A3EB42B7BBA5200199698 /* UIKitTeamplate.entitlements */,
+				EDCB7CF32B7A7ED500872579 /* Payment screen */,
 				6FBC36662B7CF6ED0053489F /* Extension */,
 				6F073AEE2B7A45160082979C /* View */,
 				6F073AED2B7A443C0082979C /* Delegate */,
@@ -138,6 +150,12 @@
 			path = UIKitTeamplate;
 			sourceTree = "<group>";
 		};
+		EDCB7CF32B7A7ED500872579 /* Payment screen */ = {
+			isa = PBXGroup;
+			children = (
+				ED0A3EB22B7BB87300199698 /* PayCheckViewController.swift */,
+			);
+			path = "Payment screen";
 		6FBC36662B7CF6ED0053489F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,9 +286,13 @@
 				6FBC36682B7CF72B0053489F /* UITextField+Extension.swift in Sources */,
 				6F073AE12B7A42DA0082979C /* LoginViewController.swift in Sources */,
 				6F073AE32B7A43470082979C /* MenuViewController.swift in Sources */,
+				ED0A3EB62B7BC47700199698 /* SceneDelegate.swift in Sources */,
 				6F073AE72B7A43AF0082979C /* ThanksScreenViewController.swift in Sources */,
 				6FBC36652B7CEC270053489F /* Constants.swift in Sources */,
 				6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */,
+				EDCB7CF52B7A804000872579 /* OrderCofeeViewController.swift in Sources */,
+				ED0A3EB32B7BB87300199698 /* PayCheckViewController.swift in Sources */,
+				ED0A3EB12B7BB77D00199698 /* AddIngredientViewController.swift in Sources */,
 				6FBC366A2B7CF9750053489F /* UIDelegate+Extension.swift in Sources */,
 				6F073AE52B7A43870082979C /* OrderCofeeViewController.swift in Sources */,
 				6F073AF22B7B4C280082979C /* ChoiceCoffeeRoast.swift in Sources */,
@@ -344,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -401,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -416,8 +438,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UIKitTeamplate/UIKitTeamplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TGXWQS3TAC;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitTeamplate/Info.plist;
@@ -443,8 +467,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UIKitTeamplate/UIKitTeamplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TGXWQS3TAC;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitTeamplate/Info.plist;
