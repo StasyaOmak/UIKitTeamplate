@@ -64,7 +64,7 @@ final class LoginViewController: UIViewController {
     }()
 
     // TextField для ввода пароля
-    private lazy var passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let element = UITextField()
         element.placeholder = AppConstants.enterPasswordText
         element.isSecureTextEntry = true
@@ -74,7 +74,7 @@ final class LoginViewController: UIViewController {
     }()
 
     // TextField для ввода почты
-    private lazy var emailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let element = UITextField()
         element.placeholder = AppConstants.enterEmailText
         element.font = UIFont(name: "Verdana", size: 14)
@@ -83,7 +83,7 @@ final class LoginViewController: UIViewController {
     }()
 
     // Кнопка для открытия меню
-    private lazy var loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let element = UIButton(type: .system)
         element.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         element.setTitleColor(.white, for: .normal)
@@ -161,25 +161,5 @@ final class LoginViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: menuViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
-    }
-}
-
-// MARK: - Extension UITextFieldDelegate
-
-// Расширение для проверки условий для ввода пароля и логина при котором кнопка логина активна или нет
-extension LoginViewController: UITextFieldDelegate {
-    func textField(
-        _ textField: UITextField,
-        shouldChangeCharactersIn range: NSRange,
-        replacementString string: String
-    ) -> Bool {
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        if email.count > 1, password.count > 1 {
-            loginButton.isEnabled = true
-            loginButton.alpha = 1
-        }
-
-        return true
     }
 }

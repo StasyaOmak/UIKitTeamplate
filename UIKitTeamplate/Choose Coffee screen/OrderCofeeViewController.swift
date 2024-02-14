@@ -29,7 +29,7 @@ final class OrderCofeeViewController: UIViewController {
     }()
 
     // Изображение выбранной степени обжарки (темная)
-    private lazy var roastingImageView: UIImageView = {
+    lazy var roastingImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 31, y: 17, width: 100, height: 100)
         element.image = UIImage(named: "darkRoast")
@@ -37,7 +37,7 @@ final class OrderCofeeViewController: UIViewController {
     }()
 
     // Текст выбранной степени обжарки (темная)
-    private lazy var roastingLabel: UILabel = {
+    lazy var roastingLabel: UILabel = {
         let element = UILabel()
         element.text = AppConstants.roastingDark
         element.textColor = .black
@@ -80,19 +80,5 @@ final class OrderCofeeViewController: UIViewController {
         }
         coffeeRoast.modalPresentationStyle = .formSheet
         present(coffeeRoast, animated: true, completion: nil)
-    }
-}
-
-// MARK: - Extension CoffeeRoastSelectionDelegate
-
-extension OrderCofeeViewController: CoffeeRoastSelectionDelegate {
-    // Установка изображения в зависимости от степени обжарки
-    func didSelectRoastingImage(_ image: UIImage) {
-        roastingImageView.image = image
-    }
-
-    // Установка текста в зависимости от степени обжарки
-    func didSelectRoastText(_ text: String) {
-        roastingLabel.text = text
     }
 }
