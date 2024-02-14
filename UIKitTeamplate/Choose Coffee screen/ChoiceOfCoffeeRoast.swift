@@ -100,7 +100,6 @@ final class ChoiceOfCoffeeRoast: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        view.backgroundColor = .white
     }
 
     // MARK: - Private Methods
@@ -115,6 +114,9 @@ final class ChoiceOfCoffeeRoast: UIViewController {
         view.addSubview(roastingLightButton)
         roastingLightButton.addSubview(roastingLightImageView)
         roastingLightButton.addSubview(roastingLightLabel)
+        
+        // Установка цвета для экрана
+        view.backgroundColor = .white
     }
 
     // Обработчик нажатия на кнопку "Темная обжарка"

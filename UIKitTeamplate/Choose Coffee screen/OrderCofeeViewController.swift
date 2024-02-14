@@ -10,12 +10,13 @@ protocol CoffeeRoastSelectionDelegate: AnyObject {
     // Метод для передачи текста выбранной степени обжарки
     func didSelectRoastText(_ text: String)
 }
-/// Экран с выбором позиций кофе для заказа 
+
+/// Экран с выбором позиций кофе для заказа
 final class OrderCofeeViewController: UIViewController {
     var selectedRoastText: String?
-
+    
     // MARK: - Private Properties
-
+    
     // Кнопка для выбора степени обжарки (темная)
     private lazy var roastingButton: UIButton = {
         let element = UIButton()
@@ -26,7 +27,7 @@ final class OrderCofeeViewController: UIViewController {
         element.addTarget(self, action: #selector(loginButtonPressed), for: .touchDown)
         return element
     }()
-
+    
     // Изображение выбранной степени обжарки (темная)
     private lazy var roastingImageView: UIImageView = {
         let element = UIImageView()
@@ -34,7 +35,7 @@ final class OrderCofeeViewController: UIViewController {
         element.image = UIImage(named: "darkRoast")
         return element
     }()
-
+    
     // Текст выбранной степени обжарки (темная)
     private lazy var roastingLabel: UILabel = {
         let element = UILabel()
@@ -45,24 +46,27 @@ final class OrderCofeeViewController: UIViewController {
         element.frame = CGRect(x: 55, y: 117, width: 165, height: 34)
         return element
     }()
-
+    
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        view.backgroundColor = .white
+        
     }
-
+    
     // MARK: - Private Methods
-
+    
     // Добавление вью на экран
     private func setupViews() {
         view.addSubview(roastingButton)
         roastingButton.addSubview(roastingImageView)
         roastingButton.addSubview(roastingLabel)
+        
+        // Установка цвета для экрана
+        view.backgroundColor = .white
     }
-
+    
     // Обработка нажатия кнопки выбора степени обжарки
     @objc private func loginButtonPressed() {
         let coffeeRoast = ChoiceOfCoffeeRoast()
@@ -87,7 +91,7 @@ extension OrderCofeeViewController: CoffeeRoastSelectionDelegate {
     func didSelectRoastingImage(_ image: UIImage) {
         roastingImageView.image = image
     }
-
+    
     // Установка текста в зависимости от степени обжарки
     func didSelectRoastText(_ text: String) {
         roastingLabel.text = text

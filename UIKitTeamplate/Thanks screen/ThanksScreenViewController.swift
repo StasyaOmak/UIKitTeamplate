@@ -68,7 +68,6 @@ final class ThanksScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        view.backgroundColor = .white
     }
 
     // MARK: - Private Methods
@@ -80,6 +79,9 @@ final class ThanksScreenViewController: UIViewController {
         view.addSubview(okButton)
         view.addSubview(promoLabel)
         view.addSubview(cancelLabel)
+        
+        // Установка цвета для экрана
+        view.backgroundColor = .white
     }
 
     // MARK: - Actions
