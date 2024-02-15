@@ -6,7 +6,7 @@ import UIKit
 /// Экран добавления дополнительных ингредиентов
 final class AddIngredientViewController: UIViewController {
     // MARK: - Constants
-    
+
     private enum Constants {
         static let titleText = "Выберите дополнительные \n ингредіенты"
         static let milk = "Молоко"
@@ -21,7 +21,7 @@ final class AddIngredientViewController: UIViewController {
     }
 
     // MARK: - Visual Components
-    
+
     private let titleLabel = UILabel()
     private let closeButton = UIButton()
 
@@ -38,7 +38,7 @@ final class AddIngredientViewController: UIViewController {
     private let espressoLabel = UILabel()
 
     // MARK: - Private Properties
-    
+
     private var isAdded = false
 
     // Сlosure принимает параметр выбрано ли что-то из доп. ингредиентов
@@ -48,7 +48,7 @@ final class AddIngredientViewController: UIViewController {
 
     init(productsIsAdded: ((Bool) -> Void)?) {
         super.init(nibName: nil, bundle: nil)
-        self.productsIsAddedHandler = productsIsAdded
+        productsIsAddedHandler = productsIsAdded
     }
 
     required init?(coder: NSCoder) {

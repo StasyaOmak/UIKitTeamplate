@@ -5,9 +5,8 @@ import UIKit
 
 /// Экран отображающий чек заказа и оплату
 final class PayCheckViewController: UIViewController {
-    
     // MARK: - Constants
-    
+
     private enum Constants {
         static let titleText = "Вашъ Заказъ"
         static let payText = "Оплатить"
@@ -17,13 +16,13 @@ final class PayCheckViewController: UIViewController {
         static let milk = "Молоко"
         static let espresso = "Эспрессо"
         static let sumText = "Цѣна - 200 руб"
-        
+
         static let close = "close"
         static let leftImage = "ileftImage"
         static let rightImage = "irightImage"
         static let centerImage = "image center"
     }
-    
+
     // MARK: - Visual Components
 
     private let closeButton = UIButton()
@@ -51,7 +50,7 @@ final class PayCheckViewController: UIViewController {
     // MARK: - Initializers
 
     init(pushThanks: (() -> ())?) {
-        self.pushThanksHandler = pushThanks
+        pushThanksHandler = pushThanks
         super.init(nibName: nil, bundle: nil)
     }
 

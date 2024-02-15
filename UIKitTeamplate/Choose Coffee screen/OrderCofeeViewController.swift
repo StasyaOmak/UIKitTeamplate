@@ -3,17 +3,25 @@
 
 import UIKit
 
+// Протокол делегата выбора степени обжарки кофе
+protocol CoffeeRoastSelectionDelegate: AnyObject {
+    // Метод для передачи изображения выбранной степени обжарки
+    func didSelectRoastingImage(_ image: UIImage)
+    // Метод для передачи текста выбранной степени обжарки
+    func didSelectRoastText(_ text: String)
+}
+
 // Экран заказа кофе
 final class OrderCofeeViewController: UIViewController {
     // MARK: - Constants
-    
+
     private enum Constants {
-        static let promocodeText  = "Лови промокод roadmaplove на любой напиток из Кофейнов"
+        static let promocodeText = "Лови промокод roadmaplove на любой напиток из Кофейнов"
         static let addProductsTitle = "Дополнительные \n ингредиенты"
         static let modificationTitle = "Модификация"
         static let priceText = "Цѣна - 100 руб"
         static let buttonTitle = "Заказть"
-        
+
         static let americano = "Американо"
         static let cappuccino = "Капучино"
         static let latte = "Латте"
@@ -41,11 +49,9 @@ final class OrderCofeeViewController: UIViewController {
     private let orderButton = UIButton()
     private let modificationLabel = UILabel()
 
-    
     private let leftButton = UIButton()
     private let rightButton = UIButton()
 
-    
     private let cofeeNames = [Constants.americano, Constants.cappuccino, Constants.latte]
 
     // MARK: - Private Properties
@@ -58,16 +64,6 @@ final class OrderCofeeViewController: UIViewController {
     // closure вызывается при нажатии на "Оплатить"( в PayCheck) переход на эран "Thanks"
     private var pushThanksHandler: (() -> ())?
 
-// Протокол делегата выбора степени обжарки кофе
-protocol CoffeeRoastSelectionDelegate: AnyObject {
-    // Метод для передачи изображения выбранной степени обжарки
-    func didSelectRoastingImage(_ image: UIImage)
-    // Метод для передачи текста выбранной степени обжарки
-    func didSelectRoastText(_ text: String)
-}
-
-/// Экран с выбором позиций кофе для заказа
-final class OrderCofeeViewController: UIViewController {
     var selectedRoastText: String?
 
     // MARK: - Visual Components
@@ -101,6 +97,7 @@ final class OrderCofeeViewController: UIViewController {
         element.frame = CGRect(x: 55, y: 117, width: 165, height: 34)
         return element
     }()
+
     // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
@@ -125,10 +122,10 @@ final class OrderCofeeViewController: UIViewController {
     private func configView() {
         view.backgroundColor = .white
     }
-    
+
     // Метод задает значение кложуре для перехода на экран "Спасибо за покупку"
     private func configPush() {
-        pushThanksHandler = { [ weak self ] in
+        pushThanksHandler = { [weak self] in
             guard let self = self else { return }
             let thanksVC = ThanksScreenViewController()
             thanksVC.view.backgroundColor = .white
@@ -138,7 +135,7 @@ final class OrderCofeeViewController: UIViewController {
 
     // Метод задает значение кложуре чтобы отобразить галочку в кнопке если добавлен хоть один из ингридиентов
     private func configureProductsIsAdded() {
-        productsIsAddedHandler = { [ weak self ] isAdded in
+        productsIsAddedHandler = { [weak self] isAdded in
             guard
                 let self = self,
                 isAdded
@@ -272,30 +269,40 @@ final class OrderCofeeViewController: UIViewController {
             cofeeImageView.image = cofeeImages[segmentIndex]
         }
         setupViews()
-    // MARK: - Private Methods
 
-    // Добавление вью на экран
-    private func setupViews() {
-        roastingButton.addSubview(roastingImageView)
-        view.addSubview(roastingButton)
-        roastingButton.addSubview(roastingLabel)
+        // MARK: - Private Methods
 
-        view.backgroundColor = .white
-    }
+        // Добавление вью на экран
+        private func setupViews() {
+            roastingButton.addSubview(roastingImageView)
+            view.addSubview(roastingButton)
+            roastingButton.addSubview(roastingLabel)
 
-    // Обработка нажатия кнопки выбора степени обжарки
-    @objc private func loginButtonPressed() {
-        coffeeRoast.delegate = self
-        let coffeeRoast = ChoiceOfCoffeeRoast()
-        // Выделение по дефолту кнопки на экране ChoiceOfCoffeeRoast
-        if roastingLabel.text == AppConstants.roastingDark {
-            coffeeRoast.roastingDarkButton.layer.borderWidth = 1
-            coffeeRoast.roastingLightButton.layer.borderWidth = 0
-        } else {
-            coffeeRoast.roastingLightButton.layer.borderWidth = 1
-            coffeeRoast.roastingDarkButton.layer.borderWidth = 0
+            // Установка цвета для экрана
+            view.backgroundColor = .white
         }
-        coffeeRoast.modalPresentationStyle = .formSheet
-        present(coffeeRoast, animated: true, completion: nil)
+
+        // Обработка нажатия кнопки выбора степени обжарки
+        @objc private func loginButtonPressed() {
+            let coffeeRoast = ChoiceOfCoffeeRoast()
+            coffeeRoast.delegate = self
+            // Выделение по дефолту кнопки на экране ChoiceOfCoffeeRoast
+            if roastingLabel.text == AppConstants.roastingDark {
+                coffeeRoast.roastingDarkButton.layer.borderWidth = 1
+                coffeeRoast.roastingLightButton.layer.borderWidth = 0
+            } else {
+                coffeeRoast.roastingLightButton.layer.borderWidth = 1
+                coffeeRoast.roastingDarkButton.layer.borderWidth = 0
+            }
+            coffeeRoast.modalPresentationStyle = .formSheet
+            present(coffeeRoast, animated: true, completion: nil)
+        }
+
+        @objc private func selectImage(_ target: UISegmentedControl) {
+            if target == cofeeSegmentedControl {
+                let segmentIndex = target.selectedSegmentIndex
+                cofeeImageView.image = cofeeImages[segmentIndex]
+            }
+        }
     }
 }
