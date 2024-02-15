@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		6F073AE12B7A42DA0082979C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE02B7A42DA0082979C /* LoginViewController.swift */; };
 		6F073AE32B7A43470082979C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE22B7A43470082979C /* MenuViewController.swift */; };
-		6F073AE52B7A43870082979C /* ChooseCofeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE42B7A43870082979C /* ChooseCofeeViewController.swift */; };
+		6F073AE52B7A43870082979C /* OrderCofeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE42B7A43870082979C /* OrderCofeeViewController.swift */; };
 		6F073AE72B7A43AF0082979C /* ThanksScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AE62B7A43AF0082979C /* ThanksScreenViewController.swift */; };
+		6F073AF22B7B4C280082979C /* ChoiceCoffeeRoast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F073AF12B7B4C280082979C /* ChoiceCoffeeRoast.swift */; };
 		6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F945A4C2B7129E0002D3883 /* AppDelegate.swift */; };
 		6F945A562B7129E1002D3883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A552B7129E1002D3883 /* Assets.xcassets */; };
 		6F945A592B7129E1002D3883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F945A572B7129E1002D3883 /* LaunchScreen.storyboard */; };
@@ -18,13 +19,20 @@
 		ED0A3EB32B7BB87300199698 /* PayCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB22B7BB87300199698 /* PayCheckViewController.swift */; };
 		ED0A3EB62B7BC47700199698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */; };
 		EDCB7CF52B7A804000872579 /* OrderCofeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */; };
+		6FBC36652B7CEC270053489F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36642B7CEC270053489F /* Constants.swift */; };
+		6FBC36682B7CF72B0053489F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36672B7CF72B0053489F /* UITextField+Extension.swift */; };
+		6FBC366A2B7CF9750053489F /* UIDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBC36692B7CF9750053489F /* UIDelegate+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F073AE02B7A42DA0082979C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F073AE22B7A43470082979C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		6F073AE42B7A43870082979C /* ChooseCofeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCofeeViewController.swift; sourceTree = "<group>"; };
+		6F073AE42B7A43870082979C /* OrderCofeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCofeeViewController.swift; sourceTree = "<group>"; };
 		6F073AE62B7A43AF0082979C /* ThanksScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksScreenViewController.swift; sourceTree = "<group>"; };
+		6F073AF12B7B4C280082979C /* ChoiceCoffeeRoast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCoffeeRoast.swift; sourceTree = "<group>"; };
+		6F073AF32B7B91B60082979C /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
+		6F073AF42B7B91BB0082979C /* Verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Verdana.ttf; sourceTree = "<group>"; };
+		6F073AF52B7B93FC0082979C /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
 		6F945A492B7129E0002D3883 /* UIKitTeamplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitTeamplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F945A4C2B7129E0002D3883 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F945A552B7129E1002D3883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +43,9 @@
 		ED0A3EB42B7BBA5200199698 /* UIKitTeamplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitTeamplate.entitlements; sourceTree = "<group>"; };
 		ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCofeeViewController.swift; sourceTree = "<group>"; };
+		6FBC36642B7CEC270053489F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6FBC36672B7CF72B0053489F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		6FBC36692B7CF9750053489F /* UIDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDelegate+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +73,8 @@
 				6F073AE42B7A43870082979C /* ChooseCofeeViewController.swift */,
 				EDCB7CF42B7A804000872579 /* OrderCofeeViewController.swift */,
 				ED0A3EB02B7BB77D00199698 /* AddIngredientViewController.swift */,
+				6F073AE42B7A43870082979C /* OrderCofeeViewController.swift */,
+				6F073AF12B7B4C280082979C /* ChoiceCoffeeRoast.swift */,
 			);
 			path = "Choose Coffee screen";
 			sourceTree = "<group>";
@@ -87,6 +100,8 @@
 			children = (
 				6F945A4C2B7129E0002D3883 /* AppDelegate.swift */,
 				ED0A3EB52B7BC47700199698 /* SceneDelegate.swift */,
+				6F945A4E2B7129E0002D3883 /* SceneDelegate.swift */,
+				6FBC36642B7CEC270053489F /* Constants.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 			children = (
 				ED0A3EB42B7BBA5200199698 /* UIKitTeamplate.entitlements */,
 				EDCB7CF32B7A7ED500872579 /* Payment screen */,
+				6FBC36662B7CF6ED0053489F /* Extension */,
 				6F073AEE2B7A45160082979C /* View */,
 				6F073AED2B7A443C0082979C /* Delegate */,
 				6F073AE92B7A43D60082979C /* Login screen */,
@@ -128,6 +144,9 @@
 				6F073AEB2B7A44140082979C /* Menu screen */,
 				6F945A552B7129E1002D3883 /* Assets.xcassets */,
 				6F945A5A2B7129E1002D3883 /* Info.plist */,
+				6F073AF32B7B91B60082979C /* Verdana-Bold.ttf */,
+				6F073AF42B7B91BB0082979C /* Verdana.ttf */,
+				6F073AF52B7B93FC0082979C /* AmaticSC-Bold.ttf */,
 			);
 			path = UIKitTeamplate;
 			sourceTree = "<group>";
@@ -138,6 +157,13 @@
 				ED0A3EB22B7BB87300199698 /* PayCheckViewController.swift */,
 			);
 			path = "Payment screen";
+		6FBC36662B7CF6ED0053489F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6FBC36672B7CF72B0053489F /* UITextField+Extension.swift */,
+				6FBC36692B7CF9750053489F /* UIDelegate+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,15 +284,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FBC36682B7CF72B0053489F /* UITextField+Extension.swift in Sources */,
 				6F073AE12B7A42DA0082979C /* LoginViewController.swift in Sources */,
 				6F073AE32B7A43470082979C /* MenuViewController.swift in Sources */,
 				ED0A3EB62B7BC47700199698 /* SceneDelegate.swift in Sources */,
 				6F073AE72B7A43AF0082979C /* ThanksScreenViewController.swift in Sources */,
+				6FBC36652B7CEC270053489F /* Constants.swift in Sources */,
 				6F945A4D2B7129E0002D3883 /* AppDelegate.swift in Sources */,
 				EDCB7CF52B7A804000872579 /* OrderCofeeViewController.swift in Sources */,
 				6F073AE52B7A43870082979C /* ChooseCofeeViewController.swift in Sources */,
 				ED0A3EB32B7BB87300199698 /* PayCheckViewController.swift in Sources */,
 				ED0A3EB12B7BB77D00199698 /* AddIngredientViewController.swift in Sources */,
+				6FBC366A2B7CF9750053489F /* UIDelegate+Extension.swift in Sources */,
+				6F073AE52B7A43870082979C /* OrderCofeeViewController.swift in Sources */,
+				6F073AF22B7B4C280082979C /* ChoiceCoffeeRoast.swift in Sources */,
+				6F945A4F2B7129E0002D3883 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
