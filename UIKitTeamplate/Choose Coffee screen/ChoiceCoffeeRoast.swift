@@ -15,9 +15,9 @@ final class ChoiceCoffeeRoast: UIViewController {
     lazy var roastingDarkButton: UIButton = {
         let element = UIButton()
         element.layer.cornerRadius = 16
-        element.backgroundColor = .coffeeButton
+//        element.backgroundColor = .coffeeButton
         element.layer.cornerRadius = 12
-        element.layer.borderColor = UIColor.buttonBlue.cgColor
+//        element.layer.borderColor = UIColor.buttonBlue.cgColor
         element.frame = CGRect(x: 15, y: 164, width: 165, height: 165)
         element.addTarget(self, action: #selector(roastingDarkButtonTouch), for: .touchUpInside)
         return element
@@ -27,9 +27,9 @@ final class ChoiceCoffeeRoast: UIViewController {
     lazy var roastingLightButton: UIButton = {
         let element = UIButton()
         element.layer.cornerRadius = 16
-        element.backgroundColor = .coffeeButton
+//        element.backgroundColor = .coffeeButton
         element.layer.cornerRadius = 12
-        element.layer.borderColor = UIColor.buttonBlue.cgColor
+//        element.layer.borderColor = UIColor.buttonBlue.cgColor
         element.frame = CGRect(x: 195, y: 164, width: 165, height: 165)
         element.addTarget(self, action: #selector(roastingLightButtonTouch), for: .touchUpInside)
         return element
@@ -50,10 +50,10 @@ final class ChoiceCoffeeRoast: UIViewController {
     // Метка выбора степени обжарки
     private lazy var choiceLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.roastingCheckResult
+        element.text = AppConstants.roastingCheckResult
         element.textColor = .black
         element.textAlignment = .center
-        element.font = UIFont(name: Constants.verdanaBold, size: 18)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 18)
         element.frame = CGRect(x: 40, y: 115, width: 294, height: 30)
         return element
     }()
@@ -62,17 +62,17 @@ final class ChoiceCoffeeRoast: UIViewController {
     private lazy var roastingDarkImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 31, y: 17, width: 100, height: 100)
-        element.image = .darkRoast
+//        element.image = .darkRoast
         return element
     }()
 
     // Лейбл для темной обжарки
     private lazy var roastingDarkLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.roastingDark
+        element.text = AppConstants.roastingDark
         element.textColor = .black
         element.numberOfLines = 2
-        element.font = UIFont(name: Constants.verdana, size: 13)
+        element.font = UIFont(name: AppConstants.verdana, size: 13)
         element.frame = CGRect(x: 55, y: 117, width: 165, height: 34)
         return element
     }()
@@ -81,17 +81,17 @@ final class ChoiceCoffeeRoast: UIViewController {
     private lazy var roastingLightImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 31, y: 17, width: 100, height: 100)
-        element.image = .lightRoast
+//        element.image = .lightRoast
         return element
     }()
 
     // Лейбл для светлой обжарки
     private lazy var roastingLightLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.roastingLight
+        element.text = AppConstants.roastingLight
         element.textColor = .black
         element.numberOfLines = 2
-        element.font = UIFont(name: Constants.verdana, size: 13)
+        element.font = UIFont(name: AppConstants.verdana, size: 13)
         element.frame = CGRect(x: 55, y: 117, width: 165, height: 34)
         return element
     }()
@@ -123,7 +123,7 @@ final class ChoiceCoffeeRoast: UIViewController {
     @objc private func roastingDarkButtonTouch() {
         roastingDarkButton.layer.borderWidth = 1
         roastingLightButton.layer.borderWidth = 0
-        roastingDarkButton.backgroundColor = .coffeeButton
+//        roastingDarkButton.backgroundColor = .coffeeButton
         if let selectedImage = roastingDarkImageView.image {
             delegate?.didSelectRoastingImage(selectedImage)
         }
@@ -134,7 +134,7 @@ final class ChoiceCoffeeRoast: UIViewController {
     @objc private func roastingLightButtonTouch() {
         roastingLightButton.layer.borderWidth = 1
         roastingDarkButton.layer.borderWidth = 0
-        roastingLightButton.backgroundColor = .coffeeButton
+//        roastingLightButton.backgroundColor = .coffeeButton
         if let selectedImage = roastingLightImageView.image {
             delegate?.didSelectRoastingImage(selectedImage)
         }

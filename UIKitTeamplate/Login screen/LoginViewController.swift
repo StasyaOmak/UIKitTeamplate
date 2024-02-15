@@ -10,7 +10,7 @@ final class LoginViewController: UIViewController {
     // Cвойство для создания белого View
     private lazy var whitePartOfScreenView: UIView = {
         let element = UIView()
-        element.frame = Constants.whitePartViewRect
+        element.frame = AppConstants.whitePartViewRect
         element.backgroundColor = .white
         element.layer.cornerRadius = 20
         return element
@@ -20,16 +20,16 @@ final class LoginViewController: UIViewController {
     private lazy var cafeLogoImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 100, y: 75, width: 175, height: 76)
-        element.image = .cafeLogo
+//        element.image = .cafeLogo
         return element
     }()
 
     // Cвойство для создания лейбла авторизации
     private lazy var authorizationLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.authorizationText
+        element.text = AppConstants.authorizationText
         element.textColor = .black
-        element.font = UIFont(name: Constants.verdanaBold, size: 26)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 26)
         element.frame = CGRect(x: 20, y: 32, width: 195, height: 31)
         return element
     }()
@@ -37,9 +37,9 @@ final class LoginViewController: UIViewController {
     // Cвойство для создания лейбла для логина
     private lazy var loginLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.loginText
+        element.text = AppConstants.loginText
         element.textColor = .black
-        element.font = UIFont(name: Constants.verdanaBold, size: 16)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 16)
         element.frame = CGRect(x: 20, y: 84, width: 175, height: 19)
         return element
     }()
@@ -47,9 +47,9 @@ final class LoginViewController: UIViewController {
     // Cвойство для создания лейбла для пароля
     private lazy var passwordLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.passwordText
+        element.text = AppConstants.passwordText
         element.textColor = .black
-        element.font = UIFont(name: Constants.verdanaBold, size: 16)
+        element.font = UIFont(name: AppConstants.verdanaBold, size: 16)
         element.frame = CGRect(x: 20, y: 159, width: 175, height: 19)
         return element
     }()
@@ -57,7 +57,7 @@ final class LoginViewController: UIViewController {
     // Кнопка для смены отобраения пароля
     private lazy var hidenEyeButton: UIButton = {
         let element = UIButton()
-        element.setImage(UIImage(named: Constants.vektorClose), for: .normal)
+        element.setImage(UIImage(named: AppConstants.vektorClose), for: .normal)
         element.frame = CGRect(x: 332, y: 185, width: 22, height: 19)
         element.addTarget(self, action: #selector(hideButtonPressed), for: .touchUpInside)
         return element
@@ -66,9 +66,9 @@ final class LoginViewController: UIViewController {
     // TextField для ввода пароля
     lazy var passwordTextField: UITextField = {
         let element = UITextField()
-        element.placeholder = Constants.enterPasswordText
+        element.placeholder = AppConstants.enterPasswordText
         element.isSecureTextEntry = true
-        element.font = UIFont(name: Constants.verdana, size: 14)
+        element.font = UIFont(name: AppConstants.verdana, size: 14)
         element.frame = CGRect(x: 20, y: 188, width: 129, height: 17)
         return element
     }()
@@ -76,8 +76,8 @@ final class LoginViewController: UIViewController {
     // TextField для ввода почты
     lazy var emailTextField: UITextField = {
         let element = UITextField()
-        element.placeholder = Constants.enterEmailText
-        element.font = UIFont(name: Constants.verdana, size: 14)
+        element.placeholder = AppConstants.enterEmailText
+        element.font = UIFont(name: AppConstants.verdana, size: 14)
         element.frame = CGRect(x: 20, y: 113, width: 175, height: 17)
         return element
     }()
@@ -85,11 +85,11 @@ final class LoginViewController: UIViewController {
     // Кнопка для открытия меню
     lazy var loginButton: UIButton = {
         let element = UIButton(type: .system)
-        element.titleLabel?.font = UIFont(name: Constants.verdanaBold, size: 16)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdanaBold, size: 16)
         element.setTitleColor(.white, for: .normal)
         element.frame = CGRect(x: 20, y: 416, width: 335, height: 44)
-        element.setTitle(Constants.enterButtonName, for: .normal)
-        element.backgroundColor = .buttonBlue
+        element.setTitle(AppConstants.enterButtonName, for: .normal)
+//        element.backgroundColor = .buttonBlue
         element.layer.cornerRadius = 12
         element.isEnabled = false
         element.alpha = 0.5
@@ -136,7 +136,7 @@ final class LoginViewController: UIViewController {
         whitePartOfScreenView.addSubview(emailGreyLineView)
         whitePartOfScreenView.addSubview(passwordGreyLineView)
 
-        view.backgroundColor = .brownBase
+//        view.backgroundColor = .brownBase
 
         // Установка делегатов
         emailTextField.delegate = self
@@ -145,11 +145,11 @@ final class LoginViewController: UIViewController {
 
     // Метод для смены изображения отображающего пароль
     @objc private func hideButtonPressed() {
-        if hidenEyeButton.currentImage == UIImage(named: Constants.vektorClose) {
-            hidenEyeButton.setImage(UIImage(named: Constants.vectorOpen), for: .normal)
+        if hidenEyeButton.currentImage == UIImage(named: AppConstants.vektorClose) {
+            hidenEyeButton.setImage(UIImage(named: AppConstants.vectorOpen), for: .normal)
             passwordTextField.isSecureTextEntry = false
         } else {
-            hidenEyeButton.setImage(UIImage(named: Constants.vektorClose), for: .normal)
+            hidenEyeButton.setImage(UIImage(named: AppConstants.vektorClose), for: .normal)
             passwordTextField.isSecureTextEntry = true
         }
     }

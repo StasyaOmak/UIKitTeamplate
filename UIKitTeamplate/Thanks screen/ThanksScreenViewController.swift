@@ -11,7 +11,7 @@ final class ThanksScreenViewController: UIViewController {
     private lazy var flowerImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 92, y: 58, width: 200, height: 86.62)
-        element.image = .flowers
+//        element.image = .flowers
         return element
     }()
 
@@ -19,18 +19,18 @@ final class ThanksScreenViewController: UIViewController {
     private lazy var thanksImageView: UIImageView = {
         let element = UIImageView()
         element.frame = CGRect(x: 75, y: 184, width: 235, height: 128)
-        element.image = .thanksForOrder
+//        element.image = .thanksForOrder
         return element
     }()
 
     // Создание кнопки Хорошо
     private lazy var okButton: UIButton = {
         let element = UIButton(type: .system)
-        element.titleLabel?.font = UIFont(name: Constants.verdanaBold, size: 16)
+        element.titleLabel?.font = UIFont(name: AppConstants.verdanaBold, size: 16)
         element.setTitleColor(.white, for: .normal)
         element.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
-        element.setTitle(Constants.okText, for: .normal)
-        element.backgroundColor = .buttonBlue
+        element.setTitle(AppConstants.okText, for: .normal)
+//        element.backgroundColor = .buttonBlue
         element.layer.cornerRadius = 12
         element.addTarget(self, action: #selector(dismissPressed), for: .touchUpInside)
         return element
@@ -39,7 +39,7 @@ final class ThanksScreenViewController: UIViewController {
     // Создание лейбла с промокодом
     private lazy var promoLabel: UILabel = {
         let element = UILabel()
-        element.text = Constants.promoText
+        element.text = AppConstants.promoText
         element.textColor = .gray
         element.numberOfLines = 4
         element.textAlignment = .center

@@ -1,10 +1,10 @@
-// Constants.swift
+// AppConstants.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// Константы для приложения
-struct Constants {
+struct AppConstants {
     static let vektorClose = "vector"
     static let vectorOpen = "vectorOpen"
     static let roastingDark = "Темная\nобжарка"
