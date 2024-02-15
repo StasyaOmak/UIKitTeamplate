@@ -24,4 +24,10 @@ extension LoginViewController: UITextFieldDelegate {
 
         return true
     }
+
+    // Скрываем клавиатуру при нажатии на клавишу Return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

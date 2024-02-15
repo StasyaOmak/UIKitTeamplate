@@ -32,4 +32,17 @@ struct Constants {
     static let verdanaBoldItalic = "Verdana-BoldItalic"
     static let okText = "Хорошо"
     static let whitePartViewRect = CGRect(x: 0, y: 248, width: 375, height: 564)
+    static let promocodeText = "Лови промокод roadmaplove на любой напиток из Кофейнов"
+    static let addProductsTitle = "Дополнительные \n ингредиенты"
+    static let modificationTitle = "Модификация"
+    static let priceText = "Цѣна - 100 руб"
+    static let buttonTitle = "Заказть"
+
+    static let americano = "Американо"
+    static let cappuccino = "Капучино"
+    static let latte = "Латте"
+    static let chekMark = "СheckMark"
+    static let plus = "Плюс"
+    static let navigation = "Стрелка 2"
+    static let share = "telegram"
 }

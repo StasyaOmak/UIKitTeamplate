@@ -13,24 +13,6 @@ protocol CoffeeRoastSelectionDelegate: AnyObject {
 
 // Экран заказа кофе
 final class OrderCofeeViewController: UIViewController {
-    // MARK: - Constants
-    
-    private enum Constants {
-        static let promocodeText  = "Лови промокод roadmaplove на любой напиток из Кофейнов"
-        static let addProductsTitle = "Дополнительные \n ингредиенты"
-        static let modificationTitle = "Модификация"
-        static let priceText = "Цѣна - 100 руб"
-        static let buttonTitle = "Заказть"
-        
-        static let americano = "Американо"
-        static let cappuccino = "Капучино"
-        static let latte = "Латте"
-        static let chekMark = "СheckMark"
-        static let plus = "Плюс"
-        static let navigation = "Стрелка 2"
-        static let share = "telegram"
-    }
-
     // MARK: - Visual Components
 
     private let topView = UIView()
@@ -49,11 +31,9 @@ final class OrderCofeeViewController: UIViewController {
     private let orderButton = UIButton()
     private let modificationLabel = UILabel()
 
-    
     private let leftButton = UIButton()
     private let rightButton = UIButton()
 
-    
     private let cofeeNames = [Constants.americano, Constants.cappuccino, Constants.latte]
 
     // MARK: - Private Properties
@@ -67,22 +47,6 @@ final class OrderCofeeViewController: UIViewController {
     private var pushThanksHandler: (() -> ())?
 
     // MARK: - Life Cycle
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configView()
-        configTopView()
-        configImageViewCofee()
-        configSegmented()
-        setupButton()
-        setupTitle()
-        configModification()
-        configPrice()
-        configButtonOrder()
-        configNavigation()
-        configureProductsIsAdded()
-        configShare()
-        configPush()
 
     var selectedRoastText: String?
 
@@ -125,26 +89,38 @@ final class OrderCofeeViewController: UIViewController {
         setupViews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configTopView()
+        configImageViewCofee()
+        configSegmented()
+        setupButton()
+        setupTitle()
+        configModification()
+        configPrice()
+        configButtonOrder()
+        configNavigation()
+        configureProductsIsAdded()
+        configShare()
+        configPush()
+    }
+
     // MARK: - Private Methods
 
-
-    private func configView() {
-        view.backgroundColor = .white
-    }
-    
     // Метод задает значение кложуре для перехода на экран "Спасибо за покупку"
     private func configPush() {
-        pushThanksHandler = { [ weak self ] in
+        pushThanksHandler = { [weak self] in
             guard let self = self else { return }
             let thanksVC = ThanksScreenViewController()
-            thanksVC.view.backgroundColor = .white
-            self.navigationController?.pushViewController(thanksVC, animated: true)
+            thanksVC.newControll = navigationController
+            thanksVC.modalPresentationStyle = .fullScreen
+            present(thanksVC, animated: true)
         }
     }
 
     // Метод задает значение кложуре чтобы отобразить галочку в кнопке если добавлен хоть один из ингридиентов
     private func configureProductsIsAdded() {
-        productsIsAddedHandler = { [ weak self ] isAdded in
+        productsIsAddedHandler = { [weak self] isAdded in
             guard
                 let self = self,
                 isAdded
@@ -162,7 +138,7 @@ final class OrderCofeeViewController: UIViewController {
     }
 
     private func configImageViewCofee() {
-        cofeeImageView.image = UIImage(named: Constants.buttonTitle)
+        cofeeImageView.image = UIImage(named: Constants.americano)
         topView.addSubview(cofeeImageView)
         cofeeImageView.frame = CGRect(x: 112, y: 128, width: 150, height: 150)
     }
@@ -264,12 +240,12 @@ final class OrderCofeeViewController: UIViewController {
 
     @objc private func showPayCheckViewController() {
         let checkVC = PayCheckViewController(pushThanks: pushThanksHandler)
-        navigationController?.present(checkVC, animated: true)
+        present(checkVC, animated: true)
     }
 
     @objc private func showAddIngridients() {
         let addProductsVC = AddIngredientViewController(productsIsAdded: productsIsAddedHandler)
-        navigationController?.present(addProductsVC, animated: true)
+        present(addProductsVC, animated: true)
     }
 
     @objc private func selectImage(_ target: UISegmentedControl) {

@@ -5,6 +5,10 @@ import UIKit
 
 /// Экран отображает благодарность  после завершения заказа.
 final class ThanksScreenViewController: UIViewController {
+    // MARK: - Public Property
+
+    weak var newControll: UINavigationController?
+
     // MARK: - Visual Components
 
     // Добавление картинки с цветами
@@ -83,6 +87,7 @@ final class ThanksScreenViewController: UIViewController {
 
     // Обработчик нажатия на кнопку "Хорошо" с переходом на экран Menu
     @objc private func dismissPressed() {
-        dismiss(animated: true)
+        dismiss(animated: false)
+        newControll?.popToRootViewController(animated: true)
     }
 }

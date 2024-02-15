@@ -211,8 +211,7 @@ final class MenuViewController: UIViewController {
 
     // Метод для перехода на экран с Кофе
     @objc private func showOrderCofeeViewController() {
-        let menuViewController = OrderCofeeViewController()
-        menuViewController.modalPresentationStyle = .fullScreen
-        present(menuViewController, animated: true, completion: nil)
+        let orderViewController = OrderCofeeViewController()
+        navigationController?.pushViewController(orderViewController, animated: true)
     }
 }
