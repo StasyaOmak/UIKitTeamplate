@@ -70,4 +70,38 @@ struct Constants {
     static let youSubscribeText = "Вы подписаны"
 
     static let replyText = "Ответить"
+
+    static let myProfileName = "mary_rmLink"
+
+    static let launchTitle = "Запуск"
+    static let moonTitle = "Луна"
+    static let astronautTitle = "Космона..."
+    static let spaceTitle = "Космос"
+    static let startRoketImage = "startRoket"
+    static let moonImage = "moon"
+    static let spaceUserImage = "spaceUser"
+    static let spaceImage = "space"
+
+    static let earthLightsImage = "earthLights"
+    static let flyRocketImage = "flyRocket"
+    static let earthImage = "earth"
+    static let seaRocketImage = "seaRocket"
+
+    static let nameOfStoryText = "Запуск"
+    static let progressValue: Float = 0.5
+    static let spaceXLinkText = "https://www.spacex.com/vehicles/starship/"
+
+    static let storyWidthTwo: CGFloat = 82
+
+    static let myProfileText = "Мария Иванова"
+    static let profileDesctiptionText = "Консультат"
+    static let linkText = "📎www.spacex.com"
+    static let plusSymbol = "+"
+    static let editText = "Изменить"
+    static let shareText = "Поделиться профилем"
+    static let cornerRadiusAddButton = 13.0
+    static let startXPoint = 46.0
+    static let viewMargin = 70.0
+    
+    static let countOfColumns = 3.02
 }
