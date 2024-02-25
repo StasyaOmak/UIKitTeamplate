@@ -29,4 +29,17 @@ extension UILabel {
         ))
         attributedText = attributedString
     }
+
+    func setupInfoLabelAttribute(title: String, descripton: String) {
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(NSAttributedString(
+            string: title,
+            attributes: [NSAttributedString.Key.font: UIFont(name: Constants.verdanaBold, size: 14) ?? ""]
+        ))
+        attributedString.append(NSAttributedString(
+            string: descripton,
+            attributes: [NSAttributedString.Key.font: UIFont(name: Constants.verdana, size: 10) ?? ""]
+        ))
+        attributedText = attributedString
+    }
 }

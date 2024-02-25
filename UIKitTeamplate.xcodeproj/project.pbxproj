@@ -21,6 +21,13 @@
 		6FD555522B8B80F700630E17 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555512B8B80F700630E17 /* Notification.swift */; };
 		6FD555542B8B828D00630E17 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555532B8B828D00630E17 /* CommentTableViewCell.swift */; };
 		6FD555562B8B860500630E17 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555552B8B860500630E17 /* SubscriptionTableViewCell.swift */; };
+		6FD555592B8BA0E700630E17 /* ProfileStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555582B8BA0E700630E17 /* ProfileStory.swift */; };
+		6FD5555B2B8BA68600630E17 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5555A2B8BA68600630E17 /* StoryViewController.swift */; };
+		6FD5555D2B8BA69E00630E17 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5555C2B8BA69E00630E17 /* BrowserViewController.swift */; };
+		6FD555602B8BA8AA00630E17 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5555F2B8BA8AA00630E17 /* HeaderTableViewCell.swift */; };
+		6FD555622B8BA8C800630E17 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555612B8BA8C800630E17 /* PhotosTableViewCell.swift */; };
+		6FD555642B8BA8E500630E17 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555632B8BA8E500630E17 /* PhotoCollectionViewCell.swift */; };
+		6FD555662B8BA8FD00630E17 /* ProfileStoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD555652B8BA8FD00630E17 /* ProfileStoriesTableViewCell.swift */; };
 		6FEA08A62B83A3D5007EC1E9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA08A52B83A3D5007EC1E9 /* TabBarViewController.swift */; };
 		6FEA08A82B83A4A2007EC1E9 /* Conctants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA08A72B83A4A2007EC1E9 /* Conctants.swift */; };
 		6FEA08AA2B83A517007EC1E9 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA08A92B83A517007EC1E9 /* NewFeedViewController.swift */; };
@@ -47,6 +54,13 @@
 		6FD555512B8B80F700630E17 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		6FD555532B8B828D00630E17 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		6FD555552B8B860500630E17 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		6FD555582B8BA0E700630E17 /* ProfileStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStory.swift; sourceTree = "<group>"; };
+		6FD5555A2B8BA68600630E17 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		6FD5555C2B8BA69E00630E17 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		6FD5555F2B8BA8AA00630E17 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6FD555612B8BA8C800630E17 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		6FD555632B8BA8E500630E17 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		6FD555652B8BA8FD00630E17 /* ProfileStoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoriesTableViewCell.swift; sourceTree = "<group>"; };
 		6FEA08A52B83A3D5007EC1E9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6FEA08A72B83A4A2007EC1E9 /* Conctants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conctants.swift; sourceTree = "<group>"; };
 		6FEA08A92B83A517007EC1E9 /* NewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +124,8 @@
 		6FD5554E2B8B3C4500630E17 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				6FD5556B2B8BD23D00630E17 /* Model */,
 				6F782DA62B86573C000EAD5D /* PostTableViewCell.swift */,
-				6F782DA02B865382000EAD5D /* Post.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -119,8 +133,8 @@
 		6FD5554F2B8B3C5D00630E17 /* Reccomend */ = {
 			isa = PBXGroup;
 			children = (
+				6FD5556A2B8BD23100630E17 /* Model */,
 				6F782DA82B865747000EAD5D /* RecommendTableViewCell.swift */,
-				6F782DA22B865396000EAD5D /* Recommend.swift */,
 			);
 			path = Reccomend;
 			sourceTree = "<group>";
@@ -128,8 +142,8 @@
 		6FD555502B8B3C7B00630E17 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				6FD555692B8BD22400630E17 /* Model */,
 				6F782DA42B86572F000EAD5D /* StoriesTableViewCell.swift */,
-				6F782D9E2B865370000EAD5D /* Stories.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -140,6 +154,57 @@
 				6F782DAA2B86705A000EAD5D /* UILabel+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6FD5555E2B8BA88A00630E17 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6FD5555F2B8BA8AA00630E17 /* HeaderTableViewCell.swift */,
+				6FD555612B8BA8C800630E17 /* PhotosTableViewCell.swift */,
+				6FD555652B8BA8FD00630E17 /* ProfileStoriesTableViewCell.swift */,
+				6FD555632B8BA8E500630E17 /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6FD555672B8BD1B700630E17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6FD555582B8BA0E700630E17 /* ProfileStory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FD555682B8BD20A00630E17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6FD555512B8B80F700630E17 /* Notification.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FD555692B8BD22400630E17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F782D9E2B865370000EAD5D /* Stories.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FD5556A2B8BD23100630E17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F782DA22B865396000EAD5D /* Recommend.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FD5556B2B8BD23D00630E17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F782DA02B865382000EAD5D /* Post.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		6FEA08AF2B83B489007EC1E9 /* NewsFeed */ = {
@@ -157,9 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				6FEA08AB2B83A561007EC1E9 /* NotificationsViewController.swift */,
-				6FD555512B8B80F700630E17 /* Notification.swift */,
 				6FD555532B8B828D00630E17 /* CommentTableViewCell.swift */,
 				6FD555552B8B860500630E17 /* SubscriptionTableViewCell.swift */,
+				6FD555682B8BD20A00630E17 /* Model */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -168,6 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				6FEA08AD2B83A583007EC1E9 /* ProfileViewController.swift */,
+				6FD5555C2B8BA69E00630E17 /* BrowserViewController.swift */,
+				6FD5555A2B8BA68600630E17 /* StoryViewController.swift */,
+				6FD555672B8BD1B700630E17 /* Model */,
+				6FD5555E2B8BA88A00630E17 /* Cell */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -308,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD5555B2B8BA68600630E17 /* StoryViewController.swift in Sources */,
 				6F782DA32B865396000EAD5D /* Recommend.swift in Sources */,
 				6FEA08A62B83A3D5007EC1E9 /* TabBarViewController.swift in Sources */,
 				6F782DA72B86573C000EAD5D /* PostTableViewCell.swift in Sources */,
@@ -315,14 +385,20 @@
 				6F782DA92B865747000EAD5D /* RecommendTableViewCell.swift in Sources */,
 				6F782DA12B865382000EAD5D /* Post.swift in Sources */,
 				6FEA08A82B83A4A2007EC1E9 /* Conctants.swift in Sources */,
+				6FD555592B8BA0E700630E17 /* ProfileStory.swift in Sources */,
+				6FD555642B8BA8E500630E17 /* PhotoCollectionViewCell.swift in Sources */,
 				6F945A4F2B7129E0002D3883 /* SceneDelegate.swift in Sources */,
+				6FD555602B8BA8AA00630E17 /* HeaderTableViewCell.swift in Sources */,
 				6F782D9F2B865370000EAD5D /* Stories.swift in Sources */,
 				6FEA08AC2B83A562007EC1E9 /* NotificationsViewController.swift in Sources */,
 				6F782DAB2B86705A000EAD5D /* UILabel+Extension.swift in Sources */,
+				6FD555622B8BA8C800630E17 /* PhotosTableViewCell.swift in Sources */,
 				6FD555542B8B828D00630E17 /* CommentTableViewCell.swift in Sources */,
 				6FD555522B8B80F700630E17 /* Notification.swift in Sources */,
 				6FEA08AE2B83A583007EC1E9 /* ProfileViewController.swift in Sources */,
+				6FD555662B8BA8FD00630E17 /* ProfileStoriesTableViewCell.swift in Sources */,
 				6FEA08AA2B83A517007EC1E9 /* NewFeedViewController.swift in Sources */,
+				6FD5555D2B8BA69E00630E17 /* BrowserViewController.swift in Sources */,
 				6FD555562B8B860500630E17 /* SubscriptionTableViewCell.swift in Sources */,
 				6F782DA52B86572F000EAD5D /* StoriesTableViewCell.swift in Sources */,
 			);
