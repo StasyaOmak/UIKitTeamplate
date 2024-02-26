@@ -11,9 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _: UIScene,
         willConnectTo _: UISceneSession,
         options _: UIScene.ConnectionOptions
-    ) {
-//        guard let _ = (scene as? UIWindowScene) else { return }
-    }
+    ) {}
 
     func sceneDidDisconnect(_: UIScene) {}
 
@@ -23,9 +21,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneWillEnterForeground(_: UIScene) {}
 
-    func sceneDidEnterBackground(_: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
+    func sceneDidEnterBackground(_: UIScene) {}
 }
